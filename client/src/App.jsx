@@ -1,16 +1,30 @@
-import Navbar from "./components/Navbar"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Catalog from './pages/Catalog';
+import About from './pages/About';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import './styles.css'
 
 function App() {
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-
-      <Navbar/>
-    </>
-  )
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
 }
 
 export default App
+
