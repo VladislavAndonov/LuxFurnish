@@ -1,2 +1,2 @@
-# lux-furnish
+# luxFurnish
 SoftUni React Project
