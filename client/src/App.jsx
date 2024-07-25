@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col home-background">
           <Navbar />
           <main className="flex-grow">
             <Routes>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
 body {
     background-color: #1a1a1a;
 }
@@ -8,23 +10,27 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
   } */
 
-/* .home-background {
+.home-background {
 background-image: url(assets/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg);
-background-size: 90%;
-background-position: 50% 90%;
+background-size: cover;
+background-position: bottom;
 background-repeat: no-repeat;
 width: 100%;
-height: 90vh;
-} */
+height: 100vh;
+}
 
-.home-background {
+/* .home-background {
   background-image: url(assets/images/katsia-jazwinska-RIb19_YSUX0-unsplash.jpg);
   background-size: cover;
-  background-position: 50% 90%;
+  background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 90vh;
+  height: 100%;
+  width: auto;
+  } */
+
+  .logo{
+    font-family: Bodoni Moda SC;
   }
