@@ -5,16 +5,15 @@ import Catalog from './pages/Catalog';
 import About from './pages/About';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import './styles.css'
 import Footer from './components/Footer';
+import './index.css';
 
 function App() {
   return (
     <>
       <Router>
-        <div className="flex flex-col home-background">
           <Navbar />
-          <main className="flex-grow">
+          <main>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/catalog" element={<Catalog />} />
@@ -23,7 +22,6 @@ function App() {
               <Route path="/register" element={<Register />} />
             </Routes>
           </main>
-        </div>
       </Router>
       <Footer />
     </>
@@ -31,4 +29,3 @@ function App() {
 }
 
 export default App
-

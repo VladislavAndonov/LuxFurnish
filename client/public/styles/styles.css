@@ -14,7 +14,7 @@ body {
   } */
 
 .home-background {
-background-image: url(assets/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg);
+background-image: url(/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg);
 background-size: cover;
 background-position: bottom;
 background-repeat: no-repeat;

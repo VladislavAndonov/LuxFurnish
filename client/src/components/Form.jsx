@@ -6,7 +6,6 @@ export default function Form() {
         lastName: '',
         email: '',
         password: '',
-        gender: 'male'
     });
 
     const changeHandler = (e) => {
@@ -91,34 +90,6 @@ export default function Form() {
                                     value={values.email}
                                     className="p-2 block w-full rounded-md border border-gray-300 py-1.5 text-gray-900 shadow-sm focus:ring-2 focus:ring-indigo-400 sm:text-sm sm:leading-6"
                                 />
-                            </div>
-                        </div>
-
-                        <div>
-                            <span className="block text-sm font-medium leading-6 text-gray-900">Gender</span>
-                            <div className="mt-2">
-                                <label className="inline-flex items-center">
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="male"
-                                        checked={values.gender === 'male'}
-                                        onChange={changeHandler}
-                                        className="form-radio text-indigo-600"
-                                    />
-                                    <span className="ml-2 text-gray-900">Male</span>
-                                </label>
-                                <label className="inline-flex items-center ml-6">
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="female"
-                                        checked={values.gender === 'female'}
-                                        onChange={changeHandler}
-                                        className="form-radio text-indigo-600"
-                                    />
-                                    <span className="ml-2 text-gray-900">Female</span>
-                                </label>
                             </div>
                         </div>
 
