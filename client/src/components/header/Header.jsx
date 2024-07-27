@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 
-export default function Navbar() {
+export default function Header() {
     const [activeNav, setActiveNav] = useState(false);
     const [scrolling, setScrolling] = useState(false);
 
