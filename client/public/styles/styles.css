@@ -34,3 +34,19 @@ height: 100vh;
   .logo{
     font-family: Bodoni Moda SC;
   }
+
+  .login-background {
+    background-image: url(/images/pexels-login-bg.jpg);
+    background-size: cover;
+    background-position: 0% 35%;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+  .register-background {
+    background-image: url(/images/katsia-jazwinska-RIb19_YSUX0-unsplash.jpg);
+    background-size: cover;
+    background-position: 0% 35%;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
