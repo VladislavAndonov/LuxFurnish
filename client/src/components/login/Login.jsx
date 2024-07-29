@@ -23,7 +23,7 @@ export default function Login() {
     return (
         <div className="login-background">
             <div className="container pt-[12em] mx-auto flex justify-center">
-                <div className="sm:mx-auto sm:w-full sm:max-w-md bg-[rgba(215,218,211,0.9)] rounded-md shadow-md p-8 scale-110">
+                <div className="sm:mx-auto sm:w-full sm:max-w-md bg-[rgba(215,218,211,0.9)] rounded-md shadow-md p-8">
                     <h2 className="text-3xl font-bold text-[#1A1A1A] ">
                         Login to your account
                     </h2>

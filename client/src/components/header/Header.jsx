@@ -8,7 +8,7 @@ export default function Header() {
 
     const navHandler = () => {
         setActiveNav(!activeNav);
-    }
+    };
 
     // Handle screen width changes
     useEffect(() => {
@@ -38,8 +38,8 @@ export default function Header() {
 
     return (
         <nav className="relative">
-            <div className={`fixed top-0 left-0 right-0 h-20 flex justify-between items-center ${scrolling ? 'bg-[#D7DAD3] shadow-md px-8 lg:px-12 py-3 transition duration-300' : 'bg-transparent w-[80%] top-5 left-1/2 transform -translate-x-1/2'} z-10`}>
-                <div className="text-4xl logo font-semibold">
+            <div className={`fixed top-0 left-0 right-0 h-20 flex justify-between items-center transition duration-300 ${scrolling ? 'bg-[#D7DAD3] shadow-md px-8 lg:px-12 py-3' : 'bg-transparent w-[80%] top-5 left-1/2 transform -translate-x-1/2'} z-10`}>
+                <div className="text-4xl logo font-bold">
                     <Link to="/">LuxFurnish</Link>
                 </div>
 

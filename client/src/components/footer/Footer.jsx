@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     <div className="flex flex-col">
-                        <p className="logo text-2xl font-bold text-[#1A1A1A]">LuxFurnish &copy;</p>
+                        <p className="logo text-4xl font-bold text-[#1A1A1A]">LuxFurnish</p>
                         <div className="flex items-center gap-x-4 mt-12">
                             <a href="https://facebook.com" className="opacity-50 w-8 h-8 flex-shrink-0 bg-[#1A1A1A] cursor-pointer hover:bg-[#81837F] rounded-full flex items-center justify-center">
                                 <FaFacebookF className="text-white" />
@@ -20,6 +20,9 @@ export default function Footer() {
                             <a href="https://linkedin.com" className="opacity-50 w-8 h-8 flex-shrink-0 bg-[#1A1A1A] cursor-pointer hover:bg-[#81837F] rounded-full flex items-center justify-center">
                                 <FaLinkedinIn className="text-white" />
                             </a>
+                        </div>
+                        <div className="flex items-center gap-x-4 mt-12">
+                            <p>&copy;LuxFurnish 2024, All rights reserved.</p>
                         </div>
                     </div>
                     <div className="sm:ml-0 ml-8">
@@ -39,20 +42,20 @@ export default function Footer() {
                     </div>
                     <div className="mt-10 lg:block hidden">
                         <label className="text-xl font-medium leading-5 text-[#1A1A1A]">Get Updates</label>
-                        <div className="flex items-center border border-[#1A1A1A] mt-4">
-                            <input type="text" className="text-base leading-4 p-4 w-full focus:outline-none text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />
-                            <button className="mr-[2px] bg-[#76A763] text-white p-4 cursor-pointer hover:bg-[#93B685]">
-                                <FaArrowRight />
+                        <div className="flex items-center rounded mt-4">
+                            <input type="text" className="text-base w-full mr-[5px] p-4 leading-4 rounded focus:ring focus:ring-[#76A763] text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />
+                            <button className="cursor-pointer bg-[#76A763] text-white p-4 hover:bg-[#93B685] rounded border border-[#646464]">
+                                <FaArrowRight size={21}/>
                             </button>
                         </div>
                     </div>
                 </div>
                 <div className="mt-10 lg:hidden">
-                    <label className="text-xl font-medium leading-5 text-[#1A1A1A]">Get Updates</label>
-                    <div className="flex items-center border border-[#1A1A1A] mt-4">
-                        <input type="text" className="text-base leading-4 p-4 relative z-0 w-full focus:outline-none text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />
-                        <button className="mr-[2px] cursor-pointer relative z-40 bg-[#76A763] text-white p-4 hover:bg-[#93B685] ">
-                            <FaArrowRight />
+                    <label className="text-2xl font-semibold leading-5 text-[#1A1A1A]">Get Updates</label>
+                    <div className="flex items-center rounded mt-4">
+                        <input type="text" className="text-base w-full mr-[5px] p-4 leading-4 relative z-0 rounded focus:ring focus:ring-[#76A763] text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />
+                        <button className="cursor-pointer relative z-40 bg-[#76A763] text-white p-4 hover:bg-[#93B685] rounded border border-[#646464]">
+                            <FaArrowRight size={21}/>
                         </button>
                     </div>
                 </div>

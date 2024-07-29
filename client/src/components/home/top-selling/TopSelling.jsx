@@ -31,7 +31,10 @@ export default function TopSelling() {
     }, []);
 
     return (
-        <div className="h-[100vh] flex items-center justify-center py-24 sm:py-8 px-4">
+        <div className="h-[100%] flex flex-col items-center justify-center gap-[4em] pb-[8em] pt-[4em]">
+            <h2 className='text-white text-4xl font-semibold'>
+                Top Selling
+            </h2>
             <CarouselProvider
                 naturalSlideWidth={100}
                 isIntrinsicHeight={true}

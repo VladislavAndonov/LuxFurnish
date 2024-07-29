@@ -23,12 +23,12 @@ export default function Register() {
     return (
         <div className="register-background">
             <div className="container pt-[12em] mx-auto flex justify-center">
-                <div className="sm:mx-auto sm:w-full sm:max-w-md bg-[rgba(215,218,211,0.9)] rounded-md shadow-md p-8 scale-110">
-                    <h2 className="text-3xl font-bold text-[#1A1A1A]">
+                <div className="sm:mx-auto sm:w-full sm:max-w-md bg-[rgba(26,26,26,0.9)] rounded-md shadow-md p-8">
+                    <h2 className="text-3xl font-bold text-white">
                         Register here
                     </h2>
 
-                    <p className="mt-4 text-l text-gray-500">
+                    <p className="mt-4 text-l text-gray-400">
                         Already have an account?{' '}
                         <a href="/login" className="font-semibold leading-6 text-[#76A763] hover:text-[#93B685]">
                             Login here.
@@ -43,7 +43,7 @@ export default function Register() {
                     >
 
                         <div>
-                            <label htmlFor="email" className="block text-xl font-medium leading-6 text-[#1A1A1A]">
+                            <label htmlFor="email" className="block text-xl font-medium leading-6 text-white">
                                 Email
                             </label>
                             <div className="mt-2">
@@ -55,14 +55,14 @@ export default function Register() {
                                     autoComplete="email"
                                     onChange={changeHandler}
                                     value={values.email}
-                                    className="p-2 block w-full rounded border border-gray-300 py-1.5 text-[#1A1A1A] shadow-md focus:ring focus:ring-[#76A763]"
+                                    className="p-2 block w-full rounded border border-gray-500 py-1.5 text-[#1A1A1A] shadow-md focus:ring focus:ring-[#76A763]"
                                 />
                             </div>
                         </div>
 
                         <div>
                             <div className="flex items-center justify-between">
-                                <label htmlFor="password" className="block text-xl font-medium leading-6 text-[#1A1A1A]">
+                                <label htmlFor="password" className="block text-xl font-medium leading-6 text-white">
                                     Password
                                 </label>
 
@@ -76,14 +76,14 @@ export default function Register() {
                                     autoComplete="current-password"
                                     onChange={changeHandler}
                                     value={values.password}
-                                    className="p-2 block w-full rounded border border-gray-300 py-1.5 text-[#1A1A1A] shadow-md focus:ring focus:ring-[#76A763]"
+                                    className="p-2 block w-full rounded border border-gray-500 py-1.5 text-[#1A1A1A] shadow-md focus:ring focus:ring-[#76A763]"
                                 />
                             </div>
                         </div>
 
                         <div>
                             <div className="flex items-center justify-between">
-                                <label htmlFor="password" className="block text-xl font-medium leading-6 text-[#1A1A1A]">
+                                <label htmlFor="password" className="block text-xl font-medium leading-6 text-white">
                                     Repeat password
                                 </label>
 
@@ -97,7 +97,7 @@ export default function Register() {
                                     autoComplete="current-password"
                                     onChange={changeHandler}
                                     value={values.password}
-                                    className="p-2 block w-full rounded border border-gray-300 py-1.5 text-[#1A1A1A] shadow-md focus:ring focus:ring-[#76A763]"
+                                    className="p-2 block w-full rounded border border-gray-500 py-1.5 text-[#1A1A1A] shadow-md focus:ring focus:ring-[#76A763]"
                                 />
                             </div>
                         </div>
