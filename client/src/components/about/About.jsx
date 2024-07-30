@@ -3,11 +3,11 @@ import { FaChevronDown } from 'react-icons/fa'
 export default function About() {
     return (
         <>
-            <div className="flex flex-col items-center justify-center lg:gap-10 gap-4 lg:h-[50vh] h-[35vh] lg:py-8 py-4 lg:text-6xl text-5xl bg-[#D7DAD3]">
-                <h1 className=" font-medium mt-[2em]">
+            <div className="flex flex-col items-center justify-center lg:gap-10 gap-4 lg:h-[50vh] h-[35vh] lg:py-8 py-4 bg-[#D7DAD3]">
+                <h1 className="font-semibold mt-[2em] lg:text-6xl text-5xl">
                     About Us
                 </h1>
-                <div>
+                <div className="animate-bounce mt-4">
                     <FaChevronDown size={25} />
                 </div>
             </div>
