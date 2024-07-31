@@ -7,20 +7,20 @@ SoftUni React Course Project
 - [x] Add base vite react project as client
 - [x] CleanUp client
 - [x] Add project resources
-- [ ] Convert html to jsx
-- [ ] Separate html into components
+- [x] Convert html to jsx
+- [x] Separate html into components
 ## 2. React Router
 - [x] Install react-router-dom
 - [x] Setup react-router-dom
 - [x] Add routes in App.jsx
 - [x] Add links in the navigation
 ## 3. Create Service Layer
-- [ ] Service layer architecture disccusion
-- [ ] Abstract requester
-- [ ] Add games api
-- [ ] Preseed practice server
+- [x] Service layer architecture disccusion
+- [x] Abstract requester
+- [x] Add games api
+- [x] Preseed practice server
 ## 4. Page Implementations
-- [ ] Game list
+- [x] Furniture list
 - [ ] Details
   - [ ] Details link
   - [ ] Details route

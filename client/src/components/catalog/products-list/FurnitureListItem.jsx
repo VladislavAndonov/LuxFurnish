@@ -1,35 +1,4 @@
-const products = [
-    {
-        id: 1,
-        name: 'Face cream',
-        price: '$100',
-        description: 'Orange & Aloe Vera',
-        imageUrl: 'https://pagedone.io/asset/uploads/1700726158.png',
-    },
-    {
-        id: 2,
-        name: 'Plastic bottle',
-        price: '$40',
-        description: 'Black color',
-        imageUrl: 'https://pagedone.io/asset/uploads/1700726174.png',
-    },
-    {
-        id: 3,
-        name: 'Men cream',
-        price: '$100',
-        description: 'Aloe Vera and Neem',
-        imageUrl: 'https://pagedone.io/asset/uploads/1700726191.png',
-    },
-    {
-        id: 4,
-        name: 'Cold Perfume',
-        price: '$100',
-        description: 'White perfume',
-        imageUrl: 'https://pagedone.io/asset/uploads/1700726207.png',
-    },
-];
-
-export default function ProductsList() {
+export default function FurnitureListItem({ furniture }) {
     return (
         <section className="py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -37,15 +6,15 @@ export default function ProductsList() {
                     Product list
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {products.map(product => (
+                    {furniture.map((product) => (
                         <a
-                            key={product.id}
-                            href="javascript:;"
-                            className="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500"
+                            key={product._id}
+                            href="#"
+                            className="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-gray-100 transition-all duration-500"
                         >
                             <div>
                                 <img
-                                    src={product.imageUrl}
+                                    src={product.image}
                                     alt={`${product.name} image`}
                                     className="w-full aspect-square rounded-2xl"
                                 />
@@ -56,7 +25,7 @@ export default function ProductsList() {
                                         {product.name}
                                     </h6>
                                     <h6 className="font-semibold text-xl leading-8 text-indigo-600">
-                                        {product.price}
+                                        €{product.price}
                                     </h6>
                                 </div>
                                 <p className="mt-2 font-normal text-sm leading-6 text-gray-500">

@@ -1,5 +1,11 @@
 import * as request from './requester.js'
 
-const BASE_URL = "http://localhost:3030/jsonstore/games";
+const BASE_URL = "http://localhost:3030/jsonstore/furniture";
 
-export const getAll = () => request.get(BASE_URL);
+export const getAll = async () => {
+    const result = await request.get(BASE_URL);
+
+    const furniture = Object.values(result);
+
+    return furniture
+}

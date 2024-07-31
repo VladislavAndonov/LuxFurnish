@@ -1,0 +1,74 @@
+{
+    "3ae7b411-c1ad-43e2-a60b-c85fafb6b48c": {
+        "name": "Bedside Table",
+        "description": "",
+        "image": "images/product-images/1-bedside-table.jpg",
+        "price": 199,
+        "category": {},
+        "_id": "3ae7b411-c1ad-43e2-a60b-c85fafb6b48c"
+    },
+    "1d4f4ede-9494-45de-8a49-90ecea987c2b": {
+        "name": "Wooden Chair",
+        "description": "",
+        "image": "images/product-images/2-wooden-chair.jpg",
+        "price": 449,
+        "category": {},
+        "_id": "1d4f4ede-9494-45de-8a49-90ecea987c2b"
+    },
+    "774794c9-77d3-441a-87b0-e65ccc19c953": {
+        "name": "Coffee Table",
+        "description": "",
+        "image": "images/product-images/3-coffee-table.jpg",
+        "price": 319,
+        "category": {},
+        "_id": "774794c9-77d3-441a-87b0-e65ccc19c953"
+    },
+    "8e2f6aab-593b-4679-8827-bea937add712": {
+        "name": "Modern TV Stand",
+        "description": "",
+        "image": "images/product-images/4-modern-TV-stand.jpg",
+        "price": 399,
+        "category": {},
+        "_id": "8e2f6aab-593b-4679-8827-bea937add712"
+    },
+    "e5e82d90-19be-4967-a1b4-53b2ae6428a9": {
+        "name": "Wooden Sofa",
+        "description": "",
+        "image": "images/product-images/5-wooden-sofa.jpg",
+        "price": 799,
+        "category": {},
+        "_id": "e5e82d90-19be-4967-a1b4-53b2ae6428a9"
+    },
+    "1596f5ed-42c3-4503-b99b-5bd2e3afc808": {
+        "name": "Stylish Chair",
+        "description": "",
+        "image": "images/product-images/6-stylish-chair.jpg",
+        "price": 599,
+        "category": {},
+        "_id": "1596f5ed-42c3-4503-b99b-5bd2e3afc808"
+    },
+    "7bbfacb3-c8d5-415f-ab05-d8a351d11942": {
+        "name": "Reading Lamp",
+        "description": "",
+        "image": "images/product-images/7-reading-lamp.jpg",
+        "price": 149,
+        "category": {},
+        "_id": "7bbfacb3-c8d5-415f-ab05-d8a351d11942"
+    },
+    "781d8d12-d627-40e5-9296-da5ce03fdf02": {
+        "name": "Wooden Armchair",
+        "description": "",
+        "image": "images/product-images/8-wooden-armchair.jpg",
+        "price": 279,
+        "category": {},
+        "_id": "781d8d12-d627-40e5-9296-da5ce03fdf02"
+    },
+    "e1ad4a66-c947-4d31-9a5e-e3c53f672e30": {
+        "name": "Large Coffee Table",
+        "description": "",
+        "image": "images/product-images/9-large-coffee-table.jpg",
+        "price": 389,
+        "category": {},
+        "_id": "e1ad4a66-c947-4d31-9a5e-e3c53f672e30"
+    }
+}

@@ -13,7 +13,6 @@ body {
     height: 100vh;
   } */
 
-
   .home-background {
     background-image: url('/images/home-bg-hq.jpg');
     background-size: cover;
@@ -46,6 +45,3 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
   }
-
-
-
