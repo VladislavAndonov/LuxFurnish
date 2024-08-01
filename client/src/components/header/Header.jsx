@@ -45,7 +45,7 @@ export default function Header() {
 
                 <div className="hidden lg:flex lg:gap-10 uppercase">
                     <Link to="/" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8">Home</Link>
-                    <Link to="/catalog" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8">Catalog</Link>
+                    <Link to="/products" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8">Products</Link>
                     <Link to="/about" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8">About</Link>
                     <Link to="/login" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8">Login</Link>
                     <Link to="/register" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8">Register</Link>
@@ -65,7 +65,7 @@ export default function Header() {
 
                 <div className="flex flex-col w-full uppercase p-8">
                     <Link to="/" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8">Home</Link>
-                    <Link to="/catalog" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8">Catalog</Link>
+                    <Link to="/products" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8">Products</Link>
                     <Link to="/about" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8">About</Link>
                     <Link to="/login" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8">Login</Link>
                     <Link to="/register" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8">Register</Link>

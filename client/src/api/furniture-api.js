@@ -9,3 +9,5 @@ export const getAll = async () => {
 
     return furniture
 }
+
+export const getOne = () => request.get(`${BASE_URL}/id`);
