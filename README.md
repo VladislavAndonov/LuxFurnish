@@ -21,10 +21,10 @@ SoftUni React Course Project
 - [x] Preseed practice server
 ## 4. Page Implementations
 - [x] Furniture list
-- [ ] Details
-  - [ ] Details link
-  - [ ] Details route
-  - [ ] Api function - getOne
+- [x] Details
+  - [x] Details link
+  - [x] Details route
+  - [x] Api function - getOne
 - [ ] Home - Latest Games
 ## 5. Comments (Advanced)
 - [ ] Create service for nested resource `comments`

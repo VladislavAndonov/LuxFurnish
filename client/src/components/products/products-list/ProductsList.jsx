@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 export default function ProductsList({ products }) {
     return (
         <section className="py-24">
@@ -10,13 +11,13 @@ export default function ProductsList({ products }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {products.map(product => (
                         <Link 
-                            to={`/products/${product._id}/details`}
+                            to={`/products/${product._id}`}
                             key={product._id}
-                            className="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-white transition-all duration-500"
+                            className="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-gray-100 transition-all duration-500"
                         >
                             <div>
                                 <img
-                                    src={`/images/product-images/${product.image}`}  // Assuming the image paths are stored in the database as file names
+                                    src={`/images/product-images/${product.image}`}
                                     alt={`${product.name} image`}
                                     className="w-full aspect-square rounded-2xl"
                                 />

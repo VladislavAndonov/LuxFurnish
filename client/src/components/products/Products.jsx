@@ -34,7 +34,7 @@ export default function Products() {
             </div>
 
 
-            <div className="bg-gray-100 py-16">
+            <div className="bg-gray-100">
                 {products.length > 0 ? (
                     <ProductsList products={products} />
                 ) : (

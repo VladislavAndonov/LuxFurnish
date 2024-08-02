@@ -14,6 +14,15 @@ export default function TopSelling() {
         { id: 1, src: "https://i.ibb.co/DWrGxX6/carosel-2.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
         { id: 2, src: "https://i.ibb.co/tCfVky2/carosel-3.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
         { id: 3, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 4, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 5, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 6, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 7, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 8, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 9, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 10, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 11, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
+        { id: 12, src: "https://i.ibb.co/rFsGfr5/carosel-4.png", alt: "sitting area", title: "Catalog 2", description: "Minimal Interior" },
     ];
 
     const getVisibleSlides = () => {
@@ -41,7 +50,7 @@ export default function TopSelling() {
                 totalSlides={slides.length}
                 visibleSlides={visibleSlides}
                 step={1}
-                infinite={true}
+                infinite={false }
             >
                 <div className="w-full relative flex items-center justify-center">
                     <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 focus:outline-none cursor-pointer">
