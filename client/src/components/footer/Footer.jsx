@@ -2,7 +2,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaArrowRight } from 
 
 export default function Footer() {
     return (
-        <div className="bg-[#D7DAD3] w-full py-6">
+        <div className="bg-[#D7DAD3] w-full py-12">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     <div className="flex flex-col">
@@ -26,24 +26,21 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="sm:ml-0 ml-8">
-                        <h2 className="text-base font-semibold leading-4 text-[#1A1A1A]">Company</h2>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">Blog</p>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">Pricing</p>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">About Us</p>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">Contact Us</p>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">Testimonials</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 text-[#1A1A1A] cursor-pointer">Home</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Products</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">About</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Contact Us</p>
                     </div>
                     <div>
-                        <h2 className="text-base font-semibold leading-4 text-[#1A1A1A]">Support</h2>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">Legal Policy</p>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">Status Policy</p>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">Privacy Policy</p>
-                        <p className="hover:text-[#81837F] text-base leading-4 mt-6 text-[#1A1A1A] cursor-pointer">Terms of Service</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 text-[#1A1A1A] cursor-pointer">Legal Policy</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Status Policy</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Privacy Policy</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Terms of Service</p>
                     </div>
-                    <div className="mt-10 lg:block hidden">
+                    <div className="lg:block hidden">
                         <label className="text-xl font-medium leading-5 text-[#1A1A1A]">Get Updates</label>
                         <div className="flex items-center rounded mt-4">
-                            <input type="text" className="text-base w-full mr-[5px] p-4 leading-4 rounded focus:ring focus:ring-[#76A763] text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />
+                            <input type="text" className="text-lg w-full mr-[5px] p-4 leading-4 rounded focus:ring focus:ring-[#76A763] text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />
                             <button className="cursor-pointer bg-[#76A763] text-white p-4 hover:bg-[#93B685] rounded border border-[#646464]">
                                 <FaArrowRight size={21}/>
                             </button>
@@ -53,7 +50,7 @@ export default function Footer() {
                 <div className="mt-10 lg:hidden">
                     <label className="text-2xl font-semibold leading-5 text-[#1A1A1A]">Get Updates</label>
                     <div className="flex items-center rounded mt-4">
-                        <input type="text" className="text-base w-full mr-[5px] p-4 leading-4 relative z-0 rounded focus:ring focus:ring-[#76A763] text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />
+                        <input type="text" className="text-lg w-full mr-[5px] p-4 leading-4 relative z-0 rounded focus:ring focus:ring-[#76A763] text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />
                         <button className="cursor-pointer relative z-40 bg-[#76A763] text-white p-4 hover:bg-[#93B685] rounded border border-[#646464]">
                             <FaArrowRight size={21}/>
                         </button>

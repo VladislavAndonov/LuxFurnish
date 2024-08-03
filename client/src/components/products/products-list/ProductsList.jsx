@@ -1,44 +1,50 @@
 import { Link } from 'react-router-dom';
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 export default function ProductsList({ products }) {
     return (
         <section className="py-24">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h2 className="font-manrope font-bold text-4xl text-black mb-8 max-lg:text-center">
-                    Furniture list
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="mx-auto max-w-[1440px] px-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {products.map(product => (
-                        <Link 
-                            to={`/products/${product._id}`}
-                            key={product._id}
-                            className="mx-auto sm:mr-0 group cursor-pointer lg:mx-auto bg-gray-100 transition-all duration-500"
-                        >
-                            <div>
-                                <img
-                                    src={`/images/product-images/${product.image}`}
-                                    alt={`${product.name} image`}
-                                    className="w-full aspect-square rounded-2xl"
-                                />
-                            </div>
-                            <div className="mt-5">
-                                <div className="flex items-center justify-between">
-                                    <h6 className="font-semibold text-xl leading-8 text-black transition-all duration-500 group-hover:text-indigo-600">
+                        <div key={product._id} className="mx-auto bg-gray-100 p-4 rounded-lg">
+                            <Link to={`/products/${product._id}`} className="block">
+                                <div className="relative cursor-pointer">
+                                    <img
+                                        src={`/images/product-images/${product.image}`}
+                                        alt={`${product.name} image`}
+                                        className="w-full rounded-xl"
+                                    />
+                                </div>
+                            </Link>
+                            <div className="mt-4 flex justify-between">
+                                <div>
+                                    <h6 className="font-semibold text-2xl leading-8 text-black group-hover:text-indigo-600">
                                         {product.name}
                                     </h6>
-                                    <h6 className="font-semibold text-xl leading-8 text-indigo-600">
+                                    <h6 className="font-semibold text-xl leading-7 text-indigo-600 mt-1">
                                         {product.price}
                                     </h6>
                                 </div>
-                                <p className="mt-2 font-normal text-sm leading-6 text-gray-500">
-                                    {product.description}
-                                </p>
+                                <button className="bg-white px-5 rounded-full shadow-lg">
+                                    <AiOutlineShoppingCart size={24} className="text-gray-600" />
+                                </button>
                             </div>
-                        </Link>
+
+                        </div>
                     ))}
                 </div>
             </div>
         </section>
     );
 }
+
+
+/*
+Product on sale
+
+<span
+    class="py-1 min-[400px]:py-2 px-2 min-[400px]:px-4 cursor-pointer rounded-lg bg-gradient-to-tr from-indigo-600 to-purple-600 font-medium text-base leading-7 text-white absolute top-3 right-3 z-10">20% Off
+</span>
+
+*/
