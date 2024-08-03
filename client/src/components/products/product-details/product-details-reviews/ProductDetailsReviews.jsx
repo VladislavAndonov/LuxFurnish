@@ -1,17 +1,22 @@
 import { useState } from "react";
+import reviewsApi from "../../../../api/reviews-api";
 
-export default function ProductDetailsReviews() {
+export default function ProductDetailsReviews({username, review}) {
     const [reviews, setReviews] = useState([
         {
             username: "John Doe",
             review: "Great product! Highly recommend it.",
         },
     ]);
+
     const [username, setUsername] = useState("");
     const [review, setReview] = useState("");
 
     const handleReviewSubmit = (e) => {
         e.preventDefault();
+
+        reviewsApi.create(productId, username, review)
+
         if (username && review) {
             setReviews([...reviews, { username, review }]);
             setUsername("");

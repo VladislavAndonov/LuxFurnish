@@ -1,6 +1,6 @@
 import { FaChevronDown } from 'react-icons/fa'
 
-export default function About() {
+export default function AboutUs() {
     return (
         <>
             <div className="flex flex-col items-center justify-center lg:gap-10 gap-4 lg:h-[50vh] h-[35vh] lg:py-8 py-4 bg-[#D7DAD3]">

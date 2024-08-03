@@ -26,7 +26,7 @@ export default function Products() {
         <>
             <div className="flex flex-col items-center justify-center lg:gap-10 gap-4 lg:h-[50vh] h-[35vh] lg:py-8 py-4 bg-[#D7DAD3]">
                 <h1 className="font-semibold mt-[2em] lg:text-6xl text-5xl">
-                    Catalog
+                    Products
                 </h1>
                 <div className="animate-bounce mt-4">
                     <FaChevronDown size={25} />
