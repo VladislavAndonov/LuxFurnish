@@ -32,7 +32,9 @@ body {
 
   .login-background {
     background-image: url("/images/login-bg-custom-size.jpg");
-    background-size: 125%;  
+    background-size: cover;
+    /* background-size: 125%; */
+    resize: both;
     background-position: 100% 25%;
     background-repeat: no-repeat;
     height: 100vh;

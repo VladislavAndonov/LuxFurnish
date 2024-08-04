@@ -1,24 +1,42 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLogin } from "../../hooks/useAuth";
+import { useForm } from "../../hooks/useForm";
+
 
 export default function Login() {
-    const [values, setValues] = useState({
-        email: '',
-        password: '',
-    });
+    const login = useLogin();
+    const navigate = useNavigate();
+    const { values, changeHandler, submitHandler } = useForm(
+        { email: '', password: '' },
+        async ({ email, password }) => {
+            try {
+                await login(email, password)
+                navigate('/')
+            } catch (err) {
+                console.log(err.message);
+                
+            }
+        }
+    );
 
-    const changeHandler = (e) => {
-        setValues(oldValues => ({
-            ...oldValues,
-            [e.target.name]: e.target.value,
-        }));
-    }
+    // const [values, setValues] = useState({
+    //     email: '',
+    //     password: '',
+    // });
 
-    const formSubmitHandler = (e) => {
-        e.preventDefault();
+    // const changeHandler = (e) => {
+    //     setValues(oldValues => ({
+    //         ...oldValues,
+    //         [e.target.name]: e.target.value,
+    //     }));
+    // }
 
-        console.log(values);
-        console.log("form submitted");
-    }
+    // const formSubmitHandler = (e) => {
+    //     e.preventDefault();
+
+    //     console.log(values);
+    //     console.log("form submitted");
+    // }
 
     return (
         <div className="login-background">
@@ -39,7 +57,7 @@ export default function Login() {
                         action="#"
                         method="POST"
                         className="space-y-6 mt-10"
-                        onSubmit={formSubmitHandler}
+                        onSubmit={submitHandler}
                     >
 
                         <div>
