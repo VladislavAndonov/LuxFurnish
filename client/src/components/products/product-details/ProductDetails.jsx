@@ -1,34 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import furnitureAPI from "../../../api/furniture-api";
+
 import { FaChevronDown, FaPlus, FaMinus } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import reviewsApi from "../../../api/reviews-api";
+import { useGetOneProduct } from "../../../hooks/useProducts";
 
 export default function ProductDetails() {
-    const [product, setProduct] = useState({});
-
+    const { productId } = useParams();
+    const [product, setProduct] = useGetOneProduct(productId);
     const [username, setUsername] = useState("");
     const [review, setReview] = useState("");
-
-    const { productId } = useParams();
-
-    useEffect(() => {
-        fetchCurrentProduct();
-    }, [productId]);
-
-    const fetchCurrentProduct = async () => {
-        const result = await furnitureAPI.getOne(productId);
-        setProduct(result);
-    }
-
 
     const reviewSubmitHandler = async (e) => {
         e.preventDefault();
 
-        await reviewsApi.create(productId, username, review)
+        const newReview = await reviewsApi.create(productId, username, review)
 
-        fetchCurrentProduct()
+        setProduct(prevState => ({
+            ...prevState,
+            reviews: {
+                ...prevState.reviews,
+                [newReview._id]: newReview,
+            }
+        }));
 
         setUsername("");
         setReview("");
