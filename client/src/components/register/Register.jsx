@@ -1,24 +1,51 @@
 import { useState } from "react";
+import { useRegister } from "../../hooks/useAuth";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "../../hooks/useForm";
+
+const initialValues = { email: '', password: '', rePassword: '' };
 
 export default function Register() {
-    const [values, setValues] = useState({
-        email: '',
-        password: '',
-    });
+    const [error, setError] = useState('');
+    const register = useRegister();
+    const navigate = useNavigate();
 
-    const changeHandler = (e) => {
-        setValues(oldValues => ({
-            ...oldValues,
-            [e.target.name]: e.target.value,
-        }));
-    }
+    const registerHandler = async ({ email, password, rePassword }) => {
+        if (password !== rePassword) {
+            return setError("Passwords should match!");
+        }
+        try {
+            await register(email, password)
+            navigate('/')
+        } catch (err) {
+            setError(err.message);
+        }
+    };
 
-    const formSubmitHandler = (e) => {
-        e.preventDefault();
+    const { values, changeHandler, submitHandler } = useForm(
+        initialValues,
+        registerHandler,
+    );
 
-        console.log(values);
-        console.log("form submitted");
-    }
+
+    // const [values, setValues] = useState({
+    //     email: '',
+    //     password: '',
+    // });
+
+    // const changeHandler = (e) => {
+    //     setValues(oldValues => ({
+    //         ...oldValues,
+    //         [e.target.name]: e.target.value,
+    //     }));
+    // }
+
+    // const formSubmitHandler = (e) => {
+    //     e.preventDefault();
+
+    //     console.log(values);
+    //     console.log("form submitted");
+    // }
 
     return (
         <div className="register-background">
@@ -30,16 +57,14 @@ export default function Register() {
 
                     <p className="mt-4 text-l text-gray-400">
                         Already have an account?{' '}
-                        <a href="/login" className="font-semibold leading-6 text-[#76A763] hover:text-[#93B685]">
+                        <Link to="/login" className="font-semibold leading-6 text-[#76A763] hover:text-[#93B685]">
                             Login here.
-                        </a>
+                        </Link>
                     </p>
 
                     <form
-                        action="#"
-                        method="POST"
                         className="space-y-6 mt-10"
-                        onSubmit={formSubmitHandler}
+                        onSubmit={submitHandler}
                     >
 
                         <div>
@@ -73,7 +98,6 @@ export default function Register() {
                                     name="password"
                                     type="password"
                                     required
-                                    autoComplete="current-password"
                                     onChange={changeHandler}
                                     value={values.password}
                                     className="p-2 block w-full rounded border border-gray-500 py-1.5 text-[#1A1A1A] shadow-md focus:ring focus:ring-[#76A763]"
@@ -90,22 +114,28 @@ export default function Register() {
                             </div>
                             <div className="mt-2">
                                 <input
-                                    id="password"
-                                    name="password"
+                                    id="rePassword"
+                                    name="rePassword"
                                     type="password"
                                     required
-                                    autoComplete="current-password"
                                     onChange={changeHandler}
-                                    value={values.password}
+                                    value={values.rePassword}
                                     className="p-2 block w-full rounded border border-gray-500 py-1.5 text-[#1A1A1A] shadow-md focus:ring focus:ring-[#76A763]"
                                 />
                             </div>
+                            {error && (
+                                <div className="text-l mt-2">
+                                    <p className="font-semibold text-red-800">
+                                        {error}
+                                    </p>
+                                </div>
+                            )}
                         </div>
 
                         <div>
                             <button
                                 type="submit"
-                                className="flex mt-10 w-full justify-center rounded-md bg-[#76A763] px-4 py-2 text-xl font-semibold leading-6 text-white shadow-md hover:bg-[#93B685] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#93B685]"
+                                className="flex mt-12 w-full justify-center rounded-md bg-[#76A763] px-4 py-2 text-xl font-semibold leading-6 text-white shadow-md hover:bg-[#93B685] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#93B685]"
                             >
                                 Sign in
                             </button>

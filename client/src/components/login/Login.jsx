@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLogin } from "../../hooks/useAuth";
 import { useForm } from "../../hooks/useForm";
 
@@ -16,7 +16,7 @@ export default function Login() {
             console.log(err.message);
         }
     };
-    
+
     const { values, changeHandler, submitHandler } = useForm(
         initialValues,
         loginHandler,
@@ -51,9 +51,9 @@ export default function Login() {
 
                     <p className="mt-4 text-l text-gray-500">
                         Don&apos;t have an account yet?{' '}
-                        <a href="/register" className="font-semibold leading-6 text-[#76A763] hover:text-[#93B685]">
+                        <Link to="/register" className="font-semibold leading-6 text-[#76A763] hover:text-[#93B685]">
                             Register here.
-                        </a>
+                        </Link>
                     </p>
 
                     <form
