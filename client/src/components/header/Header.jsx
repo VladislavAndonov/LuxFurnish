@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export default function Header() {
+    const { isAuthenticated } = useContext(AuthContext);
     const [activeNav, setActiveNav] = useState(false);
     const [scrolling, setScrolling] = useState(false);
 
@@ -51,8 +53,21 @@ export default function Header() {
                     <Link to="/" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Home</Link>
                     <Link to="/products" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Products</Link>
                     <Link to="/about" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>About Us</Link>
-                    <Link to="/login" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Login</Link>
-                    <Link to="/register" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Register</Link>
+
+                    {isAuthenticated
+                        ? (
+                            <div className="hidden lg:flex lg:gap-10 uppercase" id="guest">
+                                <Link to="/logout" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Logout</Link>
+                            </div>
+                        )
+                        : (
+                            <div className="hidden lg:flex lg:gap-10 uppercase" id="user">
+                                <Link to="/login" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Login</Link>
+                                <Link to="/register" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Register</Link>
+                            </div>
+                            
+                        )
+                    }
                 </div>
 
                 <div className="lg:hidden flex items-center">
