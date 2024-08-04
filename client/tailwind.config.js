@@ -3,15 +3,15 @@ import aspectRatio from '@tailwindcss/aspect-ratio'
 import forms from '@tailwindcss/forms'
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [
-    aspectRatio,
-    forms
-  ],
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [
+        aspectRatio,
+        forms
+    ],
 }

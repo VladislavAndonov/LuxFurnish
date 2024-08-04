@@ -5,15 +5,15 @@ body {
 }
 
 /* .home-background {
-    background-image: url('/images/interior-hq.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
-  } */
+background-image: url('/images/interior-hq.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+width: 100%;
+height: 100vh;
+} */
 
-  .home-background {
+.home-background {
     background-image: url('/images/home-bg-hq.jpg');
     background-size: cover;
     background-position: bottom;
@@ -26,11 +26,11 @@ body {
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent);
 }
 
-  .logo{
+.logo{
     font-family: Bodoni Moda SC;
-  }
+}
 
-  .login-background {
+.login-background {
     background-image: url("/images/login-bg-custom-size.jpg");
     background-size: cover;
     /* background-size: 125%; */
@@ -38,12 +38,12 @@ body {
     background-position: 100% 25%;
     background-repeat: no-repeat;
     height: 100vh;
-  }
+}
 
-  .register-background {
+.register-background {
     background-image: url('/images/register-bg-hq.jpg');
     background-size: cover;
     background-position: 100% 100%;
     background-repeat: no-repeat;
     height: 100vh;
-  }
+}
