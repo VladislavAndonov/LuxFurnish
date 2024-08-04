@@ -1,26 +1,9 @@
-import { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
-
-import * as furnitureAPI from "../../api/furniture-api";
-
+import { useGetAllProducts } from "../../hooks/useProducts";
 import ProductsList from "./products-list/ProductsList";
 
 export default function Products() {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const result = await furnitureAPI.getAll();
-                console.log("Fetched product data:", result);
-                setProducts(result);
-            } catch (error) {
-                console.error("Error fetching product data:", error);
-            }
-        };
-
-        fetchProducts();
-    }, []);
+    const [products, setProducts] = useGetAllProducts();
 
     return (
         <>

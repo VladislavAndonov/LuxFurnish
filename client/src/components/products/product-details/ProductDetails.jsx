@@ -8,25 +8,27 @@ import reviewsApi from "../../../api/reviews-api";
 export default function ProductDetails() {
     const [product, setProduct] = useState({});
 
-    const [reviews, setReviews] = useState([])
     const [username, setUsername] = useState("");
     const [review, setReview] = useState("");
 
     const { productId } = useParams();
+
+    useEffect(() => {
+        fetchCurrentProduct();
+    }, [productId]);
 
     const fetchCurrentProduct = async () => {
         const result = await furnitureAPI.getOne(productId);
         setProduct(result);
     }
 
-    useEffect(() => {
-        fetchCurrentProduct();
-    }, [productId]);
 
     const reviewSubmitHandler = async (e) => {
         e.preventDefault();
 
-        fetchCurrentProduct();
+        await reviewsApi.create(productId, username, review)
+
+        fetchCurrentProduct()
 
         setUsername("");
         setReview("");
