@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Chonburi&display=swap');
+
 
 body {
-    background-color: white;
+    background-color: black;
 }
 
 /* .home-background {
@@ -27,7 +28,9 @@ height: 100vh;
 }
 
 .logo{
-    font-family: Bodoni Moda SC;
+    font-family: "Bodoni Moda SC";
+    /* font-family: "Chonburi"; */
+
 }
 
 .login-background {

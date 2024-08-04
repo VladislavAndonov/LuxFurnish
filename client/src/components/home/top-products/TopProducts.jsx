@@ -27,7 +27,7 @@ export default function TopProducts({ topProducts }) {
     }, []);
 
     return (
-        <div className="h-[100%] flex flex-col items-center justify-center gap-[4em] pb-[8em] pt-[4em] px-4 lg:px-8">
+        <div className="flex flex-col items-center justify-center gap-8 pb-32 pt-16 px-4 lg:px-8">
             <h2 className='text-white text-4xl font-semibold'>
                 Top Selling
             </h2>
@@ -40,34 +40,32 @@ export default function TopProducts({ topProducts }) {
                 infinite={true}
                 className="w-full"
             >
-                <div className="w-full relative flex items-center justify-center">
-                    <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 focus:outline-none cursor-pointer">
-                        <svg width={50} height={50} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="relative flex items-center justify-center">
+                    <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-10 -ml-16 focus:outline-none cursor-pointer">
+                        <svg width={60} height={60} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 18L9 12L15 6" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </ButtonBack>
-                    <div className="w-full h-full mx-auto overflow-hidden">
+                    <div className="w-full h-full mx-auto overflow-hidden px-8">
                         <Slider>
                             {topProducts.map(product => (
                                 <Slide index={product._id} key={product._id}>
                                     <Link
                                         to={`/products/${product._id}`}
-                                        className="flex flex-shrink-0 relative w-full sm:w-auto mx-2 lg:mx-4 group cursor-pointer bg-gray-100 transition-all duration-500"
+                                        className="flex flex-shrink-0 relative  w-auto mx-4 group cursor-pointer bg-gray-100 transition-all duration-500 rounded-xl"
                                     >
-                                        <img src={`/images/product-images/${product.image}`} alt={product.name} className="object-cover object-center w-full" />
-                                        <div className="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6 rounded-lg">
-                                            <h2 className="lg:text-xl leading-4 text-base lg:leading-5 text-white">{product.name}</h2>
-                                            <div className="flex h-full items-end pb-6">
-                                                <h3 className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">{product.description}</h3>
-                                            </div>
+                                        <img src={`/images/product-images/${product.image}`} alt={product.name} className="object-cover h-[60vh] w-full rounded-xl" />
+                                        <div className="absolute bottom-0 w-full p-5 bg-black bg-opacity-50 text-white flex justify-between items-center text-sm lg:text-lg font-semibold leading-5 lg:leading-6 rounded-b-xl">
+                                            <div>{product.name}</div>
+                                            <div>€{product.price}.00</div>
                                         </div>
                                     </Link>
                                 </Slide>
                             ))}
                         </Slider>
                     </div>
-                    <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-0 mr-8 focus:outline-none cursor-pointer">
-                        <svg width={50} height={50} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-10 -mr-16 focus:outline-none cursor-pointer">
+                        <svg width={60} height={60} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 18L15 12L9 6" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </ButtonNext>

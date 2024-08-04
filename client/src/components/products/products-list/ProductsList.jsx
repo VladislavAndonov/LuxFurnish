@@ -23,7 +23,7 @@ export default function ProductsList({ products }) {
                                         {product.name}
                                     </h6>
                                     <h6 className="font-semibold text-xl leading-7 text-indigo-600 mt-1">
-                                        {product.price}
+                                        €{product.price}.00
                                     </h6>
                                 </div>
                                 <button className="bg-white px-5 rounded-full shadow-lg">

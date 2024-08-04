@@ -1,46 +1,49 @@
 import { useState } from "react";
-import reviewsApi from "../../../../api/reviews-api";
+import reviewsApi from "../../../api/reviews-api";
 
-export default function ProductDetailsReviews({username, review}) {
-    const [reviews, setReviews] = useState([
-        {
-            username: "John Doe",
-            review: "Great product! Highly recommend it.",
-        },
-    ]);
-
+const ProductReviews = ({ product, productId }) => {
     const [username, setUsername] = useState("");
     const [review, setReview] = useState("");
 
-    const handleReviewSubmit = (e) => {
+    const reviewSubmitHandler = async (e) => {
         e.preventDefault();
 
-        reviewsApi.create(productId, username, review)
+        const newReview = await reviewsApi.create(productId, username, review);
 
-        if (username && review) {
-            setReviews([...reviews, { username, review }]);
-            setUsername("");
-            setReview("");
-        }
+        setProduct((prevState) => ({
+            ...prevState,
+            reviews: {
+                ...prevState.reviews,
+                [newReview._id]: newReview,
+            },
+        }));
+
+        setUsername("");
+        setReview("");
     };
 
     return (
         <section className="bg-gray-100 py-8 px-4 lg:px-12">
             <div className="mx-auto max-w-[1440px] px-4 lg:px-12">
                 <h2 className="font-bold text-3xl leading-10 text-gray-900 mb-6">Reviews</h2>
-                
-                <div className="space-y-4 mb-8">
-                    {reviews.map((c, index) => (
-                        <div key={index} className="bg-white p-4 rounded-lg shadow">
-                            <p className="font-semibold text-lg text-gray-900">{c.username}</p>
-                            <p className="text-gray-700">{c.review}</p>
-                        </div>
-                    ))}
-                </div>
+
+                {Object.keys(product.reviews || {}).length > 0 ? (
+                    <div className="space-y-4 mb-8">
+                        {product.reviews &&
+                            Object.values(product.reviews).map((review) => (
+                                <div key={review._id} className="bg-white p-4 rounded-lg shadow">
+                                    <p className="font-semibold text-lg text-gray-900">{review.username}</p>
+                                    <p className="text-gray-700">{review.text}</p>
+                                </div>
+                            ))}
+                    </div>
+                ) : (
+                    <p>Be the first to review "{product.name}"</p>
+                )}
 
                 <div className="bg-white p-6 rounded-lg shadow">
                     <h3 className="font-semibold text-xl leading-8 text-gray-900 mb-4">Leave a Review</h3>
-                    <form onSubmit={handleReviewSubmit} className="space-y-4">
+                    <form onSubmit={reviewSubmitHandler} className="space-y-4">
                         <div>
                             <label className="block text-gray-700 font-medium mb-2" htmlFor="username">
                                 Username
@@ -79,3 +82,5 @@ export default function ProductDetailsReviews({username, review}) {
         </section>
     );
 };
+
+export default ProductReviews;

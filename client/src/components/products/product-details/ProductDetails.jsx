@@ -20,8 +20,8 @@ export default function ProductDetails() {
         setProduct(prevState => ({
             ...prevState,
             reviews: {
-                ...prevState.reviews,
                 [newReview._id]: newReview,
+                ...prevState.reviews,
             }
         }));
 
@@ -75,7 +75,7 @@ export default function ProductDetails() {
                             </h2>
                             <div className="flex items-center mb-6 pb-8 border-b border-gray-100">
                                 <h6 className="font-semibold text-2xl leading-9 text-gray-900 mr-5">
-                                    {product.price}
+                                    €{product.price}.00
                                 </h6>
                             </div>
                             <p className="text-gray-500 text-base font-normal mb-5">
@@ -106,7 +106,7 @@ export default function ProductDetails() {
                 </div>
             </section>
 
-            {/* Comment Section */}
+            {/* Reviews Section */}
 
             <section className="bg-gray-100 py-8 px-4 lg:px-12">
                 <div className="mx-auto max-w-[1440px] px-4 lg:px-12">
@@ -168,6 +168,16 @@ export default function ProductDetails() {
         </>
     );
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /*
