@@ -25,19 +25,19 @@ export default function Footer() {
                             <p>&copy;LuxFurnish 2024, All rights reserved.</p>
                         </div>
                     </div>
-                    <div className="sm:ml-0 ml-8">
-                        <p className="hover:text-[#81837F] text-lg leading-6 text-[#1A1A1A] cursor-pointer">Home</p>
+                    <div className="sm:ml-8 ml-16">
+                        <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Home</p>
                         <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Products</p>
                         <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">About</p>
                         <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Contact Us</p>
                     </div>
                     <div>
-                        <p className="hover:text-[#81837F] text-lg leading-6 text-[#1A1A1A] cursor-pointer">Legal Policy</p>
+                        <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Legal Policy</p>
                         <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Status Policy</p>
                         <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Privacy Policy</p>
                         <p className="hover:text-[#81837F] text-lg leading-6 mt-6 text-[#1A1A1A] cursor-pointer">Terms of Service</p>
                     </div>
-                    <div className="lg:block hidden">
+                    <div className="lg:block hidden mt-[50px]">
                         <label className="text-xl font-medium leading-5 text-[#1A1A1A]">Get Updates</label>
                         <div className="flex items-center rounded mt-4">
                             <input type="text" className="text-lg w-full mr-[5px] p-4 leading-4 rounded focus:ring focus:ring-[#76A763] text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />

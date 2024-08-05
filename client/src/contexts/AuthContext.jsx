@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import usePersistentState from "../hooks/usePersistentState";
 
 export const AuthContext = createContext({
@@ -31,4 +31,10 @@ export function AuthContextProvider(props) {
             {props.children}
         </AuthContext.Provider>
     );
+}
+
+export function useAuthContext() {
+    const authData = useContext(AuthContext);
+
+    return authData;
 }

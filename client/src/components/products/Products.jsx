@@ -7,11 +7,12 @@ export default function Products() {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center lg:gap-10 gap-4 lg:h-[50vh] h-[35vh] lg:py-8 py-4 bg-[#D7DAD3]">
-                <h1 className="font-semibold mt-[2em] lg:text-6xl text-5xl">
-                    Products
+            <div className="relative flex flex-col items-center justify-center lg:h-[60vh] h-[30vh] lg:py-8 py-4 bg-cover bg-bottom bg-fixed" style={{ backgroundImage: 'url(/images/hero-images/products-hero-resized.png)' }}>
+                <div className="absolute inset-0 bg-[#D7DAD3] opacity-30"></div>
+                <h1 className="relative font-bold lg:text-6xl text-4xl text-black z-10">
+                    About Us
                 </h1>
-                <div className="animate-bounce mt-4">
+                <div className="relative animate-bounce mt-4 z-10 text-black">
                     <FaChevronDown size={25} />
                 </div>
             </div>

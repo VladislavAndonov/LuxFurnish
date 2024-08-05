@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
+import { useEffect, useState } from 'react';
+import { useAuthContext } from '../../contexts/AuthContext';
 
 export default function Header() {
-    const { isAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated } = useAuthContext();
     const [activeNav, setActiveNav] = useState(false);
     const [scrolling, setScrolling] = useState(false);
 
