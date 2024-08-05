@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import '../public/styles/index.css';
 
@@ -10,27 +9,13 @@ import AboutUs from './components/about/About';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import Footer from './components/footer/Footer';
-import { AuthContext } from './contexts/AuthContext';
+import { AuthContextProvider } from './contexts/AuthContext';
 
 function App() {
-    const [authState, setAuthState] = useState({});
-
-    const changeAuthState = (state) => {
-        localStorage.setItem('accessToken', state.accessToken);
-        
-        setAuthState(state);
-    }
-
-    const contextData = {
-        userId: authState._id,
-        email: authState.email,
-        accessToken: authState.accessToken,
-        isAuthenticated: !!authState.email,
-        changeAuthState,
-    };
+   
 
     return (
-        <AuthContext.Provider value={contextData}>
+        <AuthContextProvider>
             <Router>
                 <div className="flex flex-col min-h-screen">
                     <Header />
@@ -47,7 +32,7 @@ function App() {
                     <Footer />
                 </div>
             </Router>
-        </AuthContext.Provider>
+        </AuthContextProvider>
     );
 }
 
