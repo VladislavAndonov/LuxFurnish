@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import '../public/styles/index.css';
 
+import { AuthContextProvider } from './contexts/AuthContext';
+
 import Home from './components/home/Home';
 import Header from './components/header/Header';
 import Products from './components/products/Products';
@@ -9,10 +11,10 @@ import AboutUs from './components/about/About';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import Footer from './components/footer/Footer';
-import { AuthContextProvider } from './contexts/AuthContext';
+import Logout from './components/logout/Logout';
 
 function App() {
-   
+
 
     return (
         <AuthContextProvider>
@@ -27,6 +29,7 @@ function App() {
                             <Route path="/about" element={<AboutUs />} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
+                            <Route path="/logout" element={<Logout />} />
                         </Routes>
                     </main>
                     <Footer />

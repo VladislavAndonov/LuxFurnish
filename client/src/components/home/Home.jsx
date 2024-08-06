@@ -10,7 +10,7 @@ export default function Home() {
         try {
             (async () => {
                 const result = await furnitureAPI.getAll();
-                setTopProducts(result.reverse().slice(0, 10)); // Adjust slice as needed
+                setTopProducts(result.reverse().slice(0, 5)); // Adjust slice as needed
             })();
         } catch (error) {
             console.error("Error fetching product data:", error);

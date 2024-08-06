@@ -56,16 +56,16 @@ export default function Header() {
 
                     {isAuthenticated
                         ? (
-                            <div className="hidden lg:flex lg:gap-10 uppercase" id="guest">
+                            <div className="hidden lg:flex lg:gap-10 uppercase" id="user" >
                                 <Link to="/logout" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Logout</Link>
                             </div>
                         )
                         : (
-                            <div className="hidden lg:flex lg:gap-10 uppercase" id="user">
+                            <div className="hidden lg:flex lg:gap-10 uppercase" id="guest" >
                                 <Link to="/login" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Login</Link>
                                 <Link to="/register" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Register</Link>
                             </div>
-                            
+
                         )
                     }
                 </div>
@@ -82,12 +82,25 @@ export default function Header() {
                     <Link to="/" onClick={closeNav}>LuxFurnish</Link>
                 </div>
 
-                <div className="flex flex-col w-full uppercase p-8">
+                <div className="flex flex-col uppercase p-8">
                     <Link to="/" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Home</Link>
                     <Link to="/products" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Products</Link>
                     <Link to="/about" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>About Us</Link>
-                    <Link to="/login" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Login</Link>
-                    <Link to="/register" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Register</Link>
+
+                    {isAuthenticated
+                        ? (
+                            <div className="flex flex-col uppercase" id="user">
+                                <Link to="/logout" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Logout</Link>
+                            </div>
+                        )
+                        : (
+
+                            <div className="flex flex-col uppercase" id="guest">
+                                <Link to="/login" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Login</Link>
+                                <Link to="/register" className="p-4 hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Register</Link>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </nav>
