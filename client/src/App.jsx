@@ -15,7 +15,6 @@ import Logout from './components/logout/Logout';
 
 function App() {
 
-
     return (
         <AuthContextProvider>
             <Router>

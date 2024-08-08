@@ -2,7 +2,7 @@ import * as request from './requester.js'
 
 const BASE_URL = "http://localhost:3030/data/furniture";
 
-export const getAll = async () => {
+const getAll = async () => {
     const result = await request.get(`${BASE_URL}`);
 
     const products = Object.values(result);
@@ -10,7 +10,7 @@ export const getAll = async () => {
     return products
 }
 
-export const getOne = (productId) => request.get(`${BASE_URL}/${productId}`);
+const getOne = (productId) => request.get(`${BASE_URL}/${productId}`);
 
 const furnitureAPI = {
     getAll,

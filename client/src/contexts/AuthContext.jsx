@@ -14,13 +14,11 @@ export function AuthContextProvider(props) {
     const [authState, setAuthState] = usePersistentState('auth', {});
 
     const changeAuthState = (state) => {
-        localStorage.setItem("accessToken", state.accessToken);
         setAuthState(state);
     };
 
     const logout = () => {
-        localStorage.removeItem("accessToken");
-        setAuthState({});
+        setAuthState(null);
     };
 
     const contextData = {

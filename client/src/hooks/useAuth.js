@@ -26,15 +26,16 @@ export const useRegister = () => {
 };
 
 export const useLogout = () => {
-    const { logout: localLogout } = useAuthContext();
+    const { logout: contextLogout } = useAuthContext();
 
     const logoutHandler = async () => {
         try {
             await logout();
-            localLogout();
         } catch (error) {
             console.error("Failed to log out:", error);
         }
+
+        contextLogout();
     };
 
     return logoutHandler;

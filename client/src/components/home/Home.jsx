@@ -1,22 +1,7 @@
-import { useEffect, useState } from "react";
-import furnitureAPI from "../../api/furniture-api";
-import TopProducts from "./top-products/TopProducts";
 import { FaChevronDown, FaStar, FaShippingFast, FaRegHandshake, FaHandsHelping } from 'react-icons/fa';
+import TopProducts from "./top-products/TopProducts";
 
 export default function Home() {
-    const [topProducts, setTopProducts] = useState([]);
-
-    useEffect(() => {
-        try {
-            (async () => {
-                const result = await furnitureAPI.getAll();
-                setTopProducts(result.reverse().slice(0, 5)); // Adjust slice as needed
-            })();
-        } catch (error) {
-            console.error("Error fetching product data:", error);
-        }
-    }, []);
-
     return (
         <>
             {/* Hero Section */}
@@ -39,15 +24,7 @@ export default function Home() {
                     <h2 className='text-4xl font-bold text-center text-[#1A1A1A] mb-8'>
                         Top Selling Products
                     </h2>
-                    {topProducts.length > 0 ? (
-                        <TopProducts topProducts={topProducts} />
-                    ) : (
-                        <div className="flex flex-col items-center justify-center">
-                            <h2 className="font-manrope font-bold text-4xl text-black mb-8">
-                                No products yet...
-                            </h2>
-                        </div>
-                    )}
+                    <TopProducts />
                 </div>
             </section>
 
@@ -117,7 +94,6 @@ export default function Home() {
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-8">Customer Reviews</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Repeat this block for multiple reviews */}
                         <div className="bg-[#2C2C2C] p-6 rounded-lg shadow-lg text-center">
                             <p className="text-lg mb-4">
                                 "Lux Furnish has completely transformed my living room. The quality and design of their furniture are unmatched. Highly recommended!"
@@ -136,7 +112,6 @@ export default function Home() {
                             </p>
                             <h4 className="text-xl font-semibold">- Emily R.</h4>
                         </div>
-                        {/* Add more review blocks as needed */}
                     </div>
                 </div>
             </section>

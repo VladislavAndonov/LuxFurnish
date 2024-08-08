@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import {
     CarouselProvider,
     Slider,
@@ -9,21 +9,36 @@ import {
     DotGroup,
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import furnitureAPI from '../../../api/furniture-api';
+import { logout } from '../../../api/auth-api';
 
-export default function TopProducts({ topProducts }) {
+export default function TopProducts() {
     const getVisibleSlides = () => {
         if (window.innerWidth < 640) return 1; // Small screens
         if (window.innerWidth < 1024) return 2; // Medium screens
         return 3; // Large screens
     };
-
-    const [visibleSlides, setVisibleSlides] = useState(getVisibleSlides);
+    const [topProducts, setTopProducts] = useState([]);
+    const [visibleSlides, setVisibleSlides] = useState(getVisibleSlides());
 
     useEffect(() => {
-        const handleResize = () => setVisibleSlides(getVisibleSlides);
+        const handleResize = () => setVisibleSlides(getVisibleSlides());
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    useEffect(() => {
+        fetchTopProducts();
+    }, []);
+
+    const fetchTopProducts = async () => {
+        try {
+            const result = await furnitureAPI.getAll();
+            setTopProducts(result.reverse().slice(0, 5));
+        } catch (error) {
+            console.error("Error fetching product data:", error);
+        }
+    };
 
     return (
         <div className="flex flex-col items-center justify-center gap-8 pb-16 pt-16 px-4 lg:px-8">
