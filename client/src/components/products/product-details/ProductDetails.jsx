@@ -13,7 +13,8 @@ const initialValues = {
 
 export default function ProductDetails() {
     const { productId } = useParams();
-    const [reviews, setReviews] = useGetAllReviews(productId)
+    const [reviews, dispatch] = useGetAllReviews(productId);
+    const { email } = useAuthContext()
     const [product] = useGetOneProduct(productId);
     const { isAuthenticated } = useAuthContext();
     const createReview = useCreateReview();
@@ -25,11 +26,11 @@ export default function ProductDetails() {
         try {
             const newReview = await createReview(productId, review);
 
-            setReviews(oldReviews => [newReview, ...oldReviews]);
+            dispatch({ type: 'ADD_COMMENT', payload: { ...newReview, author: { email } } });
+
         } catch (err) {
             console.alert(err.message)
         }
-
     });
 
 

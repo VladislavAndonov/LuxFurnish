@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import reviewsApi from "../api/reviews-api";
 
 export function useCreateReview() {
@@ -8,16 +8,29 @@ export function useCreateReview() {
     return createHandler;
 }
 
+function reviewsReducer(state, action) {
+    switch (action.type) {
+        case "GET_ALL":
+            return action.payload.slice();
+
+        case "ADD_COMMENT":
+            return [action.payload, ...state];
+
+        default:
+            return state;
+    }
+}
+
 export function useGetAllReviews(productId) {
-    const [reviews, setReviews] = useState([]);
+    const [reviews, dispatch] = useReducer(reviewsReducer, []);
 
     useEffect(() => {
         (async () => {
-            const result = await reviewsApi.getAll(productId)
+            const result = await reviewsApi.getAll(productId);
 
-            setReviews(result)
+            dispatch({ type: "GET_ALL", payload: result });
         })();
     }, [productId]);
 
-    return [reviews, setReviews]
+    return [reviews, dispatch];
 }
