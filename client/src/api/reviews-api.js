@@ -8,7 +8,7 @@ const getAll = (productId) => {
 
     const params = new URLSearchParams({
         where: `productId="${productId}"`,
-        // load: `author=_ownerId:users`,
+        load: `author=_ownerId:users`, 
 
     });
 

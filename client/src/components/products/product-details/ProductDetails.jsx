@@ -120,7 +120,7 @@ export default function ProductDetails() {
                     <div className="space-y-4 mb-8">
                         {reviews.map(review => (
                             <div key={review._id} className="bg-white p-4 rounded-lg shadow">
-                                <p className="font-semibold text-lg text-gray-900">username</p>
+                                <p className="font-semibold text-lg text-gray-900">{review.author.email}</p>
                                 <p className="text-gray-700">{review.text}</p>
                             </div>
                         ))}
