@@ -21,9 +21,14 @@ export default function ProductDetails() {
         changeHandler,
         submitHandler,
         values
-    } = useForm(initialValues, ({ review }) => {
-        createReview(productId, review)
-        console.log(values);
+    } = useForm(initialValues, async ({ review }) => {
+        try {
+            const newReview = await createReview(productId, review);
+
+            setReviews(oldReviews => [newReview, ...oldReviews]);
+        } catch (err) {
+            console.alert(err.message)
+        }
 
     });
 
@@ -119,7 +124,6 @@ export default function ProductDetails() {
                                 <p className="text-gray-700">{review.text}</p>
                             </div>
                         ))}
-
                         {reviews.length === 0 && <p>Be the first to review "{product.title}"</p>}
                     </div>
 
