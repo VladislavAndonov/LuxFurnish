@@ -1480,84 +1480,75 @@
     	furniture: {
             "3ae7b411-c1ad-43e2-a60b-c85fafb6b48c": {
                 _id: "3ae7b411-c1ad-43e2-a60b-c85fafb6b48c",
-                name: "Bedside Table",
+                title: "Bedside Table",
                 description: "",
                 image: "1-bedside-table.jpg",
                 price: 199,
-                category: [],
-                reviews: {}
+                category: []
             },
             "1d4f4ede-9494-45de-8a49-90ecea987c2b": {
                 _id: "1d4f4ede-9494-45de-8a49-90ecea987c2b",
-                name: "Wooden Chair",
+                title: "Wooden Chair",
                 description: "",
                 image: "2-wooden-chair.jpg",
                 price: 449,
-                category: [],
-                reviews: {}
+                category: []
             },
             "774794c9-77d3-441a-87b0-e65ccc19c953": {
                 _id: "774794c9-77d3-441a-87b0-e65ccc19c953",
-                name: "Coffee Table",
+                title: "Coffee Table",
                 description: "",
                 image: "3-coffee-table.jpg",
                 price: 319,
-                category: [],
-                reviews: {}
+                category: []
             },
             "8e2f6aab-593b-4679-8827-bea937add712": {
                 _id: "8e2f6aab-593b-4679-8827-bea937add712",
-                name: "Modern TV Stand",
+                title: "Modern TV Stand",
                 description: "",
                 image: "4-modern-TV-stand.jpg",
                 price: 399,
-                category: [],
-                reviews: {}
+                category: []
             },
             "e5e82d90-19be-4967-a1b4-53b2ae6428a9": {
                 _id: "e5e82d90-19be-4967-a1b4-53b2ae6428a9",
-                name: "Wooden Sofa",
+                title: "Wooden Sofa",
                 description: "",
                 image: "5-wooden-sofa.jpg",
                 price: 799,
-                category: [],
-                reviews: {}
+                category: []
             },
             "1596f5ed-42c3-4503-b99b-5bd2e3afc808": {
                 _id: "1596f5ed-42c3-4503-b99b-5bd2e3afc808",
-                name: "Stylish Chair",
+                title: "Stylish Chair",
                 description: "",
                 image: "6-stylish-chair.jpg",
                 price: 599,
-                category: [],
-                reviews: {}
+                category: []
             },
             "7bbfacb3-c8d5-415f-ab05-d8a351d11942": {
                 _id: "7bbfacb3-c8d5-415f-ab05-d8a351d11942",
-                name: "Reading Lamp",
+                title: "Reading Lamp",
                 description: "",
                 image: "7-reading-lamp.jpg",
                 price: 149,
-                category: [],
-                reviews: {}
+                category: []
             },
             "781d8d12-d627-40e5-9296-da5ce03fdf02": {
                 _id: "781d8d12-d627-40e5-9296-da5ce03fdf02",
-                name: "Wooden Armchair",
+                title: "Wooden Armchair",
                 description: "",
                 image: "8-wooden-armchair.jpg",
                 price: 279,
-                category: [],
-                reviews: {}
+                category: []
             },
             "e1ad4a66-c947-4d31-9a5e-e3c53f672e30": {
                 _id: "e1ad4a66-c947-4d31-9a5e-e3c53f672e30",
-                name: "Large Coffee Table",
+                title: "Large Coffee Table",
                 description: "",
                 image: "9-large-coffee-table.jpg",
                 price: 389,
-                category: [],
-                reviews: {}
+                category: []
             }
     	},
     	orders: {

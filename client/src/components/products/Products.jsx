@@ -3,7 +3,7 @@ import { useGetAllProducts } from "../../hooks/useProducts";
 import ProductsList from "./products-list/ProductsList";
 
 export default function Products() {
-    const [products, setProducts] = useGetAllProducts();
+    const [ products ] = useGetAllProducts();
 
     return (
         <>

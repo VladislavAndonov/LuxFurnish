@@ -1,20 +1,16 @@
 import requester from "./requester";
 
-const BASE_URL = "http://localhost:3030/data/furniture/";
+const BASE_URL = "http://localhost:3030/data/reviews";
 
-const buildURL = (productId) => `${BASE_URL}/products/${productId}/reviews`;
+const create = (productId, text) => requester.post(BASE_URL, { productId, text });
 
-const create = async (productId, username, text) =>
-    requester.post(buildURL(productId), { username, text });
+const getAll = (productId) => {
 
-const getAll = async (productId) => {
-    // const result = await requester.get(buildURL(productId));
-    // const reviews = Object.values(result);
-    // return reviews;
     const params = new URLSearchParams({
         where: `productId="${productId}"`,
-        load: `author=_ownerId:users`,
-    })
+        // load: `author=_ownerId:users`,
+
+    });
 
     return requester.get(`${BASE_URL}?${params.toString()}`);
 };

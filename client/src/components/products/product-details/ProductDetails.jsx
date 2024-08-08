@@ -1,33 +1,32 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { FaChevronDown, FaPlus, FaMinus } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import reviewsApi from "../../../api/reviews-api";
 import { useGetOneProduct } from "../../../hooks/useProducts";
+import { useForm } from "../../../hooks/useForm";
+import { useGetAllReviews, useCreateReview } from "../../../hooks/useReviews";
+import { useAuthContext } from "../../../contexts/AuthContext";
+
+const initialValues = {
+    review: ''
+}
 
 export default function ProductDetails() {
     const { productId } = useParams();
-    const [product, setProduct] = useGetOneProduct(productId);
-    const [username, setUsername] = useState("");
-    const [review, setReview] = useState("");
+    const [reviews, setReviews] = useGetAllReviews(productId)
+    const [product] = useGetOneProduct(productId);
+    const { isAuthenticated } = useAuthContext();
+    const createReview = useCreateReview();
+    const {
+        changeHandler,
+        submitHandler,
+        values
+    } = useForm(initialValues, ({ review }) => {
+        createReview(productId, review)
+        console.log(values);
 
-    const reviewSubmitHandler = async (e) => {
-        e.preventDefault();
+    });
 
-        const newReview = await reviewsApi.create(productId, username, review)
-
-        setProduct(prevState => ({
-            ...prevState,
-            reviews: {
-                [newReview._id]: newReview,
-                ...prevState.reviews,
-            }
-        }));
-
-        setUsername("");
-        setReview("");
-    };
 
     return (
         <>
@@ -47,31 +46,31 @@ export default function ProductDetails() {
                             <div className="relative w-full lg:w-auto">
                                 <img
                                     src={`/images/product-images/${product.image}`}
-                                    alt={`${product.name} image`}
+                                    alt={`${product.title} image`}
                                     className="w-full h-auto max-h-[70vh] object-cover rounded-lg"
                                 />
                             </div>
                             <div className="grid grid-cols-3 lg:grid-cols-1 gap-4">
                                 <img
                                     src={`/images/product-images/${product.image}`}
-                                    alt={`${product.name} image`}
+                                    alt={`${product.title} image`}
                                     className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer"
                                 />
                                 <img
                                     src={`/images/product-images/${product.image}`}
-                                    alt={`${product.name} image`}
+                                    alt={`${product.title} image`}
                                     className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer"
                                 />
                                 <img
                                     src={`/images/product-images/${product.image}`}
-                                    alt={`${product.name} image`}
+                                    alt={`${product.title} image`}
                                     className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer"
                                 />
                             </div>
                         </div>
                         <div className="lg:col-span-2 flex flex-col justify-center">
                             <h2 className="font-bold text-3xl leading-10 text-gray-900 mb-2 capitalize">
-                                {product.name}
+                                {product.title}
                             </h2>
                             <div className="flex items-center mb-6 pb-8 border-b border-gray-100">
                                 <h6 className="font-semibold text-2xl leading-9 text-gray-900 mr-5">
@@ -113,71 +112,51 @@ export default function ProductDetails() {
                     <h2 className="font-bold text-3xl leading-10 text-gray-900 mb-6">Reviews</h2>
 
 
-
-                    {Object.keys(product.reviews || {}).length > 0
-                        ? <div className="space-y-4 mb-8">
-                            {product.reviews && Object.values(product.reviews).map(review => (
-                                <div key={review._id} className="bg-white p-4 rounded-lg shadow">
-                                    <p className="font-semibold text-lg text-gray-900">{review.username}</p>
-                                    <p className="text-gray-700">{review.text}</p>
-                                </div>
-                            ))}
-                        </div>
-                        : <p>Be the first to review "{product.name}"</p>
-                    }
-
-                    <div className="bg-white p-6 rounded-lg shadow">
-                        <h3 className="font-semibold text-xl leading-8 text-gray-900 mb-4">Leave a Review</h3>
-                        <form onSubmit={reviewSubmitHandler} className="space-y-4">
-                            <div>
-                                <label className="block text-gray-700 font-medium mb-2" htmlFor="username">
-                                    Username
-                                </label>
-                                <input
-                                    type="text"
-                                    id="username"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    required
-                                />
+                    <div className="space-y-4 mb-8">
+                        {reviews.map(review => (
+                            <div key={review._id} className="bg-white p-4 rounded-lg shadow">
+                                <p className="font-semibold text-lg text-gray-900">username</p>
+                                <p className="text-gray-700">{review.text}</p>
                             </div>
-                            <div>
-                                <label className="block text-gray-700 font-medium mb-2" htmlFor="review">
-                                    Review
-                                </label>
-                                <textarea
-                                    id="review"
-                                    value={review}
-                                    onChange={(e) => setReview(e.target.value)}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    rows="4"
-                                    required
-                                ></textarea>
-                            </div>
-                            <button
-                                type="submit"
-                                className="py-2 px-4 bg-indigo-600 text-white font-semibold rounded-full transition-all duration-300 hover:bg-indigo-700"
-                            >
-                                Submit
-                            </button>
-                        </form>
+                        ))}
+
+                        {reviews.length === 0 && <p>Be the first to review "{product.title}"</p>}
                     </div>
+
+
+                    {isAuthenticated && (
+                        <div className="bg-white p-6 rounded-lg shadow">
+                            <h3 className="font-semibold text-xl leading-8 text-gray-900 mb-4">Leave a Review</h3>
+                            <form onSubmit={submitHandler} className="space-y-4">
+                                <div>
+                                    <label className="block text-gray-700 font-medium mb-2" htmlFor="review">
+                                        Review
+                                    </label>
+                                    <textarea
+                                        name="review"
+                                        id="review"
+                                        onChange={changeHandler}
+                                        value={values.review}
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                        rows="4"
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="py-2 px-4 bg-indigo-600 text-white font-semibold rounded-full transition-all duration-300 hover:bg-indigo-700"
+                                >
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    )}
+
                 </div>
             </section>
         </>
     );
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /*

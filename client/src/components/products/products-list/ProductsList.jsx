@@ -12,7 +12,7 @@ export default function ProductsList({ products }) {
                                 <div className="relative cursor-pointer">
                                     <img
                                         src={`/images/product-images/${product.image}`}
-                                        alt={`${product.name} image`}
+                                        alt={`${product.title} image`}
                                         className="w-full rounded-xl"
                                     />
                                 </div>
@@ -20,7 +20,7 @@ export default function ProductsList({ products }) {
                             <div className="mt-4 flex justify-between">
                                 <div>
                                     <h6 className="font-semibold text-2xl leading-8 text-black group-hover:text-indigo-600">
-                                        {product.name}
+                                        {product.title}
                                     </h6>
                                     <h6 className="font-semibold text-xl leading-7 text-indigo-600 mt-1">
                                         €{product.price}.00

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
     CarouselProvider,
     Slider,
@@ -10,7 +10,6 @@ import {
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import furnitureAPI from '../../../api/furniture-api';
-import { logout } from '../../../api/auth-api';
 
 export default function TopProducts() {
     const getVisibleSlides = () => {
@@ -65,9 +64,9 @@ export default function TopProducts() {
                                         to={`/products/${product._id}`}
                                         className="flex flex-shrink-0 relative w-auto mx-2 md:mx-4 group cursor-pointer bg-white transition-all duration-500 rounded-xl shadow-lg"
                                     >
-                                        <img src={`/images/product-images/${product.image}`} alt={product.name} className="object-cover h-[60vh] w-full rounded-xl" />
+                                        <img src={`/images/product-images/${product.image}`} alt={product.title} className="object-cover h-[60vh] w-full rounded-xl" />
                                         <div className="absolute bottom-0 w-full p-5 bg-black bg-opacity-50 text-white flex justify-between items-center text-sm lg:text-lg font-semibold leading-5 lg:leading-6 rounded-b-xl">
-                                            <div>{product.name}</div>
+                                            <div>{product.title}</div>
                                             <div>€{product.price}.00</div>
                                         </div>
                                     </Link>
