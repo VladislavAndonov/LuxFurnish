@@ -33,7 +33,7 @@ export default function Header() {
     // Handle scrolling
     useEffect(() => {
         const handleScroll = () => {
-            setScrolling(window.scrollY > 300);
+            setScrolling(window.scrollY > 200);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -44,7 +44,7 @@ export default function Header() {
 
     return (
         <nav className="relative">
-            <div className={`fixed top-0 left-0 right-0 h-20 flex justify-between items-center transition duration-300 ${scrolling ? 'bg-[#D7DAD3] shadow-md px-8 lg:px-12 py-3' : 'bg-transparent w-[80%] top-5 left-1/2 transform -translate-x-1/2'} z-10`}>
+            <div className={`fixed top-0 left-0 right-0 h-20 flex justify-between items-center transition duration-300 ${scrolling ? 'bg-[#D7DAD3] shadow-md px-8 lg:px-12 py-3' : 'bg-transparent w-[80%] top-5 left-1/2 transform -translate-x-1/2'} z-20`}>
                 <div className="text-4xl logo font-bold">
                     <Link to="/" onClick={closeNav}>LuxFurnish</Link>
                 </div>

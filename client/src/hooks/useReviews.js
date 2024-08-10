@@ -8,13 +8,23 @@ export function useCreateReview() {
     return createHandler;
 }
 
+export function useDeleteReview() {
+    const deleteHandler = (productId, review) =>
+        reviewsApi.del(productId, review);
+
+    return deleteHandler;
+}
+
 function reviewsReducer(state, action) {
     switch (action.type) {
         case "GET_ALL":
             return action.payload.slice();
 
-        case "ADD_COMMENT":
+        case "CREATE_REVIEW":
             return [action.payload, ...state];
+
+        case "DELETE_REVIEW":
+            return state.filter((review) => review._id !== action.payload);
 
         default:
             return state;

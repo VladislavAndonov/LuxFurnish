@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 
-import { FaChevronDown, FaPlus, FaMinus } from "react-icons/fa";
+import { FaChevronDown, FaPlus, FaMinus, FaEdit, FaTrashAlt } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useGetOneProduct } from "../../../hooks/useProducts";
 import { useForm } from "../../../hooks/useForm";
-import { useGetAllReviews, useCreateReview } from "../../../hooks/useReviews";
+import { useGetAllReviews, useCreateReview, useDeleteReview } from "../../../hooks/useReviews";
 import { useAuthContext } from "../../../contexts/AuthContext";
 
 const initialValues = {
@@ -14,10 +14,14 @@ const initialValues = {
 export default function ProductDetails() {
     const { productId } = useParams();
     const [reviews, dispatch] = useGetAllReviews(productId);
-    const { email } = useAuthContext()
+    const { email, userId } = useAuthContext()
     const [product] = useGetOneProduct(productId);
     const { isAuthenticated } = useAuthContext();
     const createReview = useCreateReview();
+    const deleteReview = useDeleteReview();
+
+    
+
     const {
         changeHandler,
         submitHandler,
@@ -26,7 +30,7 @@ export default function ProductDetails() {
         try {
             const newReview = await createReview(productId, review);
 
-            dispatch({ type: 'ADD_COMMENT', payload: { ...newReview, author: { email } } });
+            dispatch({ type: 'CREATE_REVIEW', payload: { ...newReview, author: { email } } });
 
         } catch (err) {
             console.alert(err.message)
@@ -34,13 +38,30 @@ export default function ProductDetails() {
     });
 
 
+
+    const handleDeleteReview = (reviewId) => {
+        try {
+            deleteReview(productId, reviewId);
+
+            dispatch({ type: 'DELETE_REVIEW', payload: reviewId });
+
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
+
+    // const isReviewOwner = email === review.author.email
+
+
+
     return (
         <>
-            <div className="flex flex-col items-center justify-center lg:gap-10 gap-4 lg:h-[50vh] h-[35vh] lg:py-8 py-4 bg-[#D7DAD3]">
-                <h1 className="font-semibold mt-[2em] lg:text-6xl text-5xl">
-                    Product details
+            <div className="relative flex flex-col items-center justify-center lg:h-[60vh] h-[40vh] lg:py-8 py-4 bg-cover bg-fixed" style={{ backgroundImage: 'url(/images/hero-images/products-hero-resized.png)' }}>
+                <div className="absolute inset-0 bg-[#D7DAD3] opacity-30"></div>
+                <h1 className="relative font-bold lg:text-6xl text-4xl text-black z-10">
+                    Product Details
                 </h1>
-                <div className="animate-bounce mt-4">
+                <div className="relative animate-bounce mt-4 z-10 text-black">
                     <FaChevronDown size={25} />
                 </div>
             </div>
@@ -53,24 +74,24 @@ export default function ProductDetails() {
                                 <img
                                     src={`/images/product-images/${product.image}`}
                                     alt={`${product.title} image`}
-                                    className="w-full h-auto max-h-[70vh] object-cover rounded-lg"
+                                    className="w-full h-auto max-h-[70vh] object-cover rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
                                 />
                             </div>
                             <div className="grid grid-cols-3 lg:grid-cols-1 gap-4">
                                 <img
                                     src={`/images/product-images/${product.image}`}
                                     alt={`${product.title} image`}
-                                    className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer"
+                                    className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
                                 />
                                 <img
                                     src={`/images/product-images/${product.image}`}
                                     alt={`${product.title} image`}
-                                    className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer"
+                                    className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
                                 />
                                 <img
                                     src={`/images/product-images/${product.image}`}
                                     alt={`${product.title} image`}
-                                    className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer"
+                                    className="w-full h-auto max-h-[144px] object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
                                 />
                             </div>
                         </div>
@@ -111,26 +132,39 @@ export default function ProductDetails() {
                 </div>
             </section>
 
+
             {/* Reviews Section */}
 
-            <section className="bg-gray-100 py-8 px-4 lg:px-12">
+            <section className="bg-gray-100 py-12">
                 <div className="mx-auto max-w-[1440px] px-4 lg:px-12">
                     <h2 className="font-bold text-3xl leading-10 text-gray-900 mb-6">Reviews</h2>
 
-
-                    <div className="space-y-4 mb-8">
+                    <div className="space-y-6 mb-8">
                         {reviews.map(review => (
-                            <div key={review._id} className="bg-white p-4 rounded-lg shadow">
-                                <p className="font-semibold text-lg text-gray-900">{review.author.email}</p>
-                                <p className="text-gray-700">{review.text}</p>
+                            <div key={review._id} className="bg-white p-6 rounded-lg shadow-lg relative">
+                                <p className="font-semibold text-lg text-gray-900 mb-2">{review.author.email}</p>
+                                <p className="text-gray-700 mb-4">{review.text}</p>
+                                {userId === review._ownerId && (
+                                    <div className="absolute top-4 right-4 flex gap-2">
+
+                                        <button
+                                            onClick={() => handleDeleteReview(review._id)}
+                                            className="text-red-600 hover:text-red-800 transition-colors duration-300"
+                                        >
+                                            <FaTrashAlt size={18} />
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         ))}
-                        {reviews.length === 0 && <p>Be the first to review "{product.title}"</p>}
+
+                        {reviews.length === 0 && (
+                            <p className="text-gray-600">Be the first to review "{product.title}"</p>
+                        )}
                     </div>
 
-
                     {isAuthenticated && (
-                        <div className="bg-white p-6 rounded-lg shadow">
+                        <div className="bg-white p-6 rounded-lg shadow-lg">
                             <h3 className="font-semibold text-xl leading-8 text-gray-900 mb-4">Leave a Review</h3>
                             <form onSubmit={submitHandler} className="space-y-4">
                                 <div>
@@ -138,14 +172,15 @@ export default function ProductDetails() {
                                         Review
                                     </label>
                                     <textarea
-                                        name="review"
                                         id="review"
+                                        name="review"
                                         onChange={changeHandler}
                                         value={values.review}
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                         rows="4"
                                         required
                                     ></textarea>
+
                                 </div>
                                 <button
                                     type="submit"
@@ -156,7 +191,6 @@ export default function ProductDetails() {
                             </form>
                         </div>
                     )}
-
                 </div>
             </section>
         </>
@@ -164,27 +198,19 @@ export default function ProductDetails() {
 }
 
 
-/*
-Star Rating
-
-<svg
-width={20}
-height={20}
-viewBox="0 0 20 20"
-fill="none"
-xmlns="http://www.w3.org/2000/svg"
+{/* <button
+    onClick={() => handleEditReview(review._id, prompt("Edit your review:", review.text))}
+    className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
 >
-<g clipPath="url(#clip0_12029_1640)">
-    <path
-        d="M9.10326 2.31699C9.47008 1.57374 10.5299 1.57374 10.8967 2.31699L12.7063 5.98347C12.8519 6.27862 13.1335 6.48319 13.4592 6.53051L17.5054 7.11846C18.3256 7.23765 18.6531 8.24562 18.0596 8.82416L15.1318 11.6781C14.8961 11.9079 14.7885 12.2389 14.8442 12.5632L15.5353 16.5931C15.6754 17.41 14.818 18.033 14.0844 17.6473L10.4653 15.7446C10.174 15.5915 9.82598 15.5915 9.53466 15.7446L5.91562 17.6473C5.18199 18.033 4.32456 17.41 4.46467 16.5931L5.15585 12.5632C5.21148 12.2389 5.10393 11.9079 4.86825 11.6781L1.94038 8.82416C1.34687 8.24562 1.67438 7.23765 2.4946 7.11846L6.54081 6.53051C6.86652 6.48319 7.14808 6.27862 7.29374 5.98347L9.10326 2.31699Z"
-        fill="#FBBF24"
-    />
-</g>
-<defs>
-    <clipPath id="clip0_12029_1640">
-        <rect width={20} height={20} fill="white" />
-    </clipPath>
-</defs>
-</svg>
+    <FaEdit size={18} />
+</button> */}
 
-*/
+
+// const handleEditReview = async (reviewId, updatedReview) => {
+//     try {
+//         const editedReview = await editReview(productId, reviewId, updatedReview);
+//         dispatch({ type: 'EDIT_REVIEW', payload: editedReview });
+//     } catch (err) {
+//         console.error(err.message);
+//     }
+// };
