@@ -1,20 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Chonburi&display=swap');
 
 
+
 body {
     background-color: black;
 }
 
 /* .home-background {
-background-image: url('/images/interior-hq.jpg');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-width: 100%;
-height: 100vh;
-} */
-
-.home-background {
     background-image: url('/images/home-bg-hq.jpg');
     background-size: cover;
     background-position: bottom;
@@ -22,31 +14,12 @@ height: 100vh;
     width: 100%;
     height: 100vh;
     position: relative;
-    /* Apply the fade effect */
     mask-image: linear-gradient(to bottom, black, transparent);
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent);
-}
+} */
 
 .logo{
     font-family: "Bodoni Moda SC";
     /* font-family: "Chonburi"; */
 
-}
-
-.login-background {
-    background-image: url("/images/login-bg-custom-size.jpg");
-    background-size: cover;
-    /* background-size: 125%; */
-    resize: both;
-    background-position: 100% 25%;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
-.register-background {
-    background-image: url('/images/register-bg-hq.jpg');
-    background-size: cover;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    height: 100vh;
 }

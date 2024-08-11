@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import '../public/styles/index.css';
+
 
 import { AuthContextProvider } from './contexts/AuthContext';
 
@@ -12,6 +12,7 @@ import Login from './components/login/Login';
 import Register from './components/register/Register';
 import Footer from './components/footer/Footer';
 import Logout from './components/logout/Logout';
+import PrivateGuard from './components/common/PrivateGuard';
 
 function App() {
 
@@ -29,6 +30,9 @@ function App() {
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/logout" element={<Logout />} />
+                            <Route element={<PrivateGuard />}>
+                                <Route path="/logout" element={<Logout />} />
+                            </Route>
                         </Routes>
                     </main>
                     <Footer />

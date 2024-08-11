@@ -1339,89 +1339,120 @@
     	}
     };
     var seedData = {
-    	
     	reviews: {
             "7541b0ac-c897-4152-add9-c219c7910a43": {
                 _id: "7541b0ac-c897-4152-add9-c219c7910a43",
     		    _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                productId: "1d4f4ede-9494-45de-8a49-90ecea987c2b",
+                productId: "1596f5ed-42c3-4503-b99b-5bd2e3afc808",
                 _createdOn: 1723272489322,
-                text: "Great product!",
-    		}
+                text: "Great design!",
+    		},
+            "f2485ac5-1084-4f94-aae3-951ce174febf": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                productId: "8e2f6aab-593b-4679-8827-bea937add712",
+                text: "This TV stand is perfect for my living room. It’s spacious enough to hold all my entertainment devices, and the design is sleek and modern. The quality is excellent, and it was straightforward to assemble. Great value for the price!",
+                _createdOn: 1723370315001,
+                _id: "f2485ac5-1084-4f94-aae3-951ce174febf"
+            }
+
     	},
     	furniture: {
             "3ae7b411-c1ad-43e2-a60b-c85fafb6b48c": {
                 _id: "3ae7b411-c1ad-43e2-a60b-c85fafb6b48c",
                 title: "Bedside Table",
-                description: "",
+                description: "This elegant bedside table offers a perfect blend of functionality and style. With its compact design, it fits seamlessly beside any bed, providing ample storage space for your nighttime essentials. The sleek finish and sturdy construction make it a timeless addition to your bedroom decor.",
                 image: "1-bedside-table.jpg",
-                price: 199,
-                category: []
+                price: 189.99,
+                category: ["Bedroom", "Wood", "Storage"]
             },
             "1d4f4ede-9494-45de-8a49-90ecea987c2b": {
                 _id: "1d4f4ede-9494-45de-8a49-90ecea987c2b",
                 title: "Wooden Chair",
-                description: "",
+                description: "Crafted from high-quality wood, this chair combines durability with classic design. Its ergonomic shape ensures comfort, while the natural wood finish adds a touch of warmth to any room. Ideal for dining rooms, home offices, or as a stylish accent piece.",
                 image: "2-wooden-chair.jpg",
-                price: 449,
-                category: []
+                price: 449.99,
+                category: ["Dining Room", "Wood", "Seating", "Modern"]
             },
             "774794c9-77d3-441a-87b0-e65ccc19c953": {
                 _id: "774794c9-77d3-441a-87b0-e65ccc19c953",
                 title: "Coffee Table",
-                description: "",
+                description: "This coffee table is a must-have for any living room, featuring a sleek design and practical storage options. Its sturdy build and minimalist style make it a versatile piece that complements a wide range of interior styles.",
                 image: "3-coffee-table.jpg",
-                price: 319,
-                category: []
+                price: 319.99,
+                category: ["Living Room", "Wood", "Table"]
             },
             "8e2f6aab-593b-4679-8827-bea937add712": {
                 _id: "8e2f6aab-593b-4679-8827-bea937add712",
                 title: "Modern TV Stand",
-                description: "",
+                description: "This modern TV stand offers a sleek and functional design, perfect for contemporary living spaces. With ample storage for media devices and a clean, streamlined appearance, it enhances any entertainment setup. Crafted with high-quality materials for lasting durability.",
                 image: "4-modern-TV-stand.jpg",
-                price: 399,
-                category: []
+                price: 349.99,
+                category: ["Living Room", "Wood", "Storage", "Modern"]
             },
             "e5e82d90-19be-4967-a1b4-53b2ae6428a9": {
                 _id: "e5e82d90-19be-4967-a1b4-53b2ae6428a9",
                 title: "Wooden Sofa",
-                description: "",
+                description: "This wooden sofa is a perfect blend of comfort and style, featuring a solid wood frame and plush cushions. Its timeless design makes it an ideal choice for both modern and traditional living rooms. Durable and elegant, it's built to last.",
                 image: "5-wooden-sofa.jpg",
-                price: 799,
-                category: []
+                price: 799.99,
+                category: ["Living Room", "Wood", "Textile", "Seating"]
             },
             "1596f5ed-42c3-4503-b99b-5bd2e3afc808": {
                 _id: "1596f5ed-42c3-4503-b99b-5bd2e3afc808",
                 title: "Stylish Chair",
-                description: "",
+                description: "Upgrade your space with this stylish chair, featuring a sleek design and comfortable seating. The contemporary look is perfect for any modern interior, whether it's in the living room, bedroom, or office. Built with high-quality materials for durability.",
                 image: "6-stylish-chair.jpg",
-                price: 599,
-                category: []
+                price: 499.99,
+                category: ["Living Room", "Office", "Seating", "Modern"]
             },
             "7bbfacb3-c8d5-415f-ab05-d8a351d11942": {
                 _id: "7bbfacb3-c8d5-415f-ab05-d8a351d11942",
                 title: "Reading Lamp",
-                description: "",
+                description: "Enhance your reading experience with this adjustable reading lamp. Its sleek design and adjustable arm provide focused lighting exactly where you need it. Perfect for a bedside table or reading nook, adding both functionality and style to your space.",
                 image: "7-reading-lamp.jpg",
-                price: 149,
-                category: []
+                price: 129.99,
+                category: ["Lighting", "Bedroom", "Office", "Modern"]
             },
             "781d8d12-d627-40e5-9296-da5ce03fdf02": {
                 _id: "781d8d12-d627-40e5-9296-da5ce03fdf02",
                 title: "Wooden Armchair",
-                description: "",
+                description: "This wooden armchair combines classic design with modern comfort. The sturdy wood frame and comfortable cushions make it perfect for any living room or study. Its timeless appeal ensures it will be a cherished piece for years to come.",
                 image: "8-wooden-armchair.jpg",
-                price: 279,
-                category: []
+                price: 289.99,
+                category: ["Living Room","Wood", "Textile", "Seating"]
             },
             "e1ad4a66-c947-4d31-9a5e-e3c53f672e30": {
                 _id: "e1ad4a66-c947-4d31-9a5e-e3c53f672e30",
                 title: "Large Coffee Table",
-                description: "",
+                description: "This large coffee table is ideal for spacious living rooms, offering ample surface area for decor and entertaining. Its sturdy construction and stylish design make it a standout piece that anchors any room with sophistication.",
                 image: "9-large-coffee-table.jpg",
-                price: 389,
-                category: []
-            }
+                price: 389.99,
+                category: ["Living Room", "Wood", "Table"]
+            },
+            "874b67be-3e80-40f0-8ab5-9a935c40b2d5" : {
+                _id: "874b67be-3e80-40f0-8ab5-9a935c40b2d5",
+                title: "Small Side Table",
+                description: "This small side table is a versatile addition to any room, providing a perfect spot for a lamp, book, or drink. Its compact size makes it ideal for small spaces, while the stylish design adds a touch of elegance.",
+                image: "10-small-side-table.png",
+                price: 129.99,
+                category: ["Living Room", "Table", "Modern"]
+            },
+            "42cb52a9-f83d-4516-8586-1e91780fc02a": {
+                _id: "42cb52a9-f83d-4516-8586-1e91780fc02a",
+                title: "Table Lamp",
+                description: "Illuminate your space with this elegant table lamp, featuring a sleek design and soft lighting. Perfect for any room, it adds both functionality and style, whether on a bedside table, desk, or living room side table.",
+                image: "11-table-lamp.png",
+                price: 149.99,
+                category: ["Lighting", "Bedroom", "Living Room", "Modern"]
+            },
+            "cfb54893-1a3d-49e9-8bf1-91b21eb7e2c8": {
+                _id: "cfb54893-1a3d-49e9-8bf1-91b21eb7e2c8",
+                title: "Stylish Armchair",
+                description: "This stylish armchair is the perfect combination of comfort and contemporary design. Its sleek lines and plush cushioning make it an ideal accent piece for any living room or bedroom, providing both aesthetics and comfort.",
+                image: "12-stylish-armchair.png ",
+                price: 599.99,
+                category: ["Living Room", "Textile", "Seating", "Modern"]
+            },
     	}
     };
     var rules$1 = {

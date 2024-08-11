@@ -80,6 +80,33 @@
             "price": "€389.00",
             "category": [],
             "reviews": {}
+        },
+
+        "874b67be-3e80-40f0-8ab5-9a935c40b2d5" :{
+            "_id": "874b67be-3e80-40f0-8ab5-9a935c40b2d5",
+            "name": "Small Side Table",
+            "description": "",
+            "image": "",
+            "price": 129.99,
+            "category": []
+        },
+
+        "cfb54893-1a3d-49e9-8bf1-91b21eb7e2c8": {
+            "_id": "cfb54893-1a3d-49e9-8bf1-91b21eb7e2c8",
+            "name": "Stylish Armchair",
+            "description": "",
+            "image": "",
+            "price": 599.99,
+            "category": []
+        },
+
+        "42cb52a9-f83d-4516-8586-1e91780fc02a": {
+            "_id": "42cb52a9-f83d-4516-8586-1e91780fc02a",
+            "name": "Small Table Lamp",
+            "description": "",
+            "image": "",
+            "price": 149.99,
+            "category": []
         }
     }
 }

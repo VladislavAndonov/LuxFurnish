@@ -8,8 +8,8 @@ export default function Products() {
     return (
         <>
             {/* Hero Section */}
-            <div className="relative flex flex-col items-center justify-center lg:h-[70vh] h-[35vh] lg:py-12 py-6 bg-cover bg-center bg-fixed" style={{ backgroundImage: 'url(/images/hero-images/products-hero-resized.png)' }}>
-                <div className="absolute inset-0 bg-[#D7DAD3] opacity-50"></div>
+            <div className="relative flex flex-col items-center justify-center lg:h-[70vh] h-[35vh] lg:py-12 py-6 bg-cover bg-bottom bg-fixed" style={{ backgroundImage: 'url(/images/hero-images/products-bg.jpg)' }}>
+                <div className="absolute inset-0 bg-white opacity-30"></div>
                 <h1 className="relative font-bold lg:text-7xl text-5xl text-[#1A1A1A] z-10">
                     Explore Our Collection
                 </h1>
