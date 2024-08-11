@@ -1340,21 +1340,90 @@
     };
     var seedData = {
     	reviews: {
-            "7541b0ac-c897-4152-add9-c219c7910a43": {
-                _id: "7541b0ac-c897-4152-add9-c219c7910a43",
-    		    _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                productId: "1596f5ed-42c3-4503-b99b-5bd2e3afc808",
-                _createdOn: 1723272489322,
-                text: "Great design!",
-    		},
             "f2485ac5-1084-4f94-aae3-951ce174febf": {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 productId: "8e2f6aab-593b-4679-8827-bea937add712",
                 text: "This TV stand is perfect for my living room. It’s spacious enough to hold all my entertainment devices, and the design is sleek and modern. The quality is excellent, and it was straightforward to assemble. Great value for the price!",
                 _createdOn: 1723370315001,
                 _id: "f2485ac5-1084-4f94-aae3-951ce174febf"
+            },
+            "7f36ecf2-3476-42ec-a99d-54ea0f11be4f": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                productId: "cfb54893-1a3d-49e9-8bf1-91b21eb7e2c8",
+                text: "I love my new armchair! It's incredibly comfortable and adds a pop of color to my space. The fabric is soft and durable, and the design is both chic and functional. It’s now my favorite spot to relax.",
+                _createdOn: 1723396091106,
+                _id: "7f36ecf2-3476-42ec-a99d-54ea0f11be4f"
+            },
+            "89ade6e3-3f80-4320-9c2a-a2efa8791b4a": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                productId: "3ae7b411-c1ad-43e2-a60b-c85fafb6b48c",
+                text: "This bedside table is exactly what I was looking for. It’s sturdy, stylish, and easy to assemble. The sleek design adds a contemporary feel to my bedroom, and it pairs wonderfully with my existing decor.",
+                _createdOn: 1723396146670,
+                _id: "89ade6e3-3f80-4320-9c2a-a2efa8791b4a"
+            },
+            "5fb34b12-61ee-44c3-b4af-347d81107ab3": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                productId: "774794c9-77d3-441a-87b0-e65ccc19c953",
+                text: "I am thrilled with my new coffee table! The finish is beautiful, and it's the perfect size for my living room. It adds a touch of elegance and practicality, with enough space for decor and functionality.",
+                _createdOn: 1723396174310,
+                _id: "5fb34b12-61ee-44c3-b4af-347d81107ab3"
+            },
+            "800f5eff-f573-40a4-a4d1-ea8b9cebf983": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                productId: "e5e82d90-19be-4967-a1b4-53b2ae6428a9",
+                text: "The sofa is absolutely stunning! The quality is top-notch, with a luxurious feel that's both comfortable and stylish. It has transformed my living room into a cozy and inviting space. Highly recommend!",
+                _createdOn: 1723396224509,
+                _id: "800f5eff-f573-40a4-a4d1-ea8b9cebf983"
+            },
+            "3a83b3b7-a6c9-49e5-996f-934c68f6f375": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                productId: "874b67be-3e80-40f0-8ab5-9a935c40b2d5",
+                text: "This side table is exactly what I needed to complete my living room setup. It’s compact, stylish, and very sturdy. The design is versatile, and the craftsmanship is superb. A perfect blend of form and function!",
+                _createdOn: 1723396354685,
+                _id: "3a83b3b7-a6c9-49e5-996f-934c68f6f375"
+            },
+            "900ac8f7-2d87-4765-b8c5-60303034f629": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                productId: "42cb52a9-f83d-4516-8586-1e91780fc02a",
+                text: "I couldn’t be happier with this table lamp. It’s elegant and provides the perfect lighting for my bedroom. The design is sleek, and it adds a touch of sophistication to my bedside table.",
+                _createdOn: 1723396379893,
+                _id: "900ac8f7-2d87-4765-b8c5-60303034f629"
+            },
+            "653baa2b-000c-48a0-8513-a46ce9ac3180": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                productId: "774794c9-77d3-441a-87b0-e65ccc19c953",
+                text: "I’m in love with this coffee table! It’s simple yet elegant, with a solid build that gives it a high-end feel. It complements my living room perfectly and offers plenty of space for decor and magazines.",
+                _createdOn: 1723397149788,
+                _id: "653baa2b-000c-48a0-8513-a46ce9ac3180"
+            },
+            "ee006cbc-1ea2-4a44-8887-a7381b74caba": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                productId: "1596f5ed-42c3-4503-b99b-5bd2e3afc808",
+                text: "Upgrade your space with this stylish chair, featuring a sleek design and comfortable seating. The contemporary look is perfect for any modern interior, whether it's in the living room, bedroom, or office. Built with high-quality materials for durability.",
+                _createdOn: 1723397205989,
+                _id: "ee006cbc-1ea2-4a44-8887-a7381b74caba"
+            },
+            "a75fa79d-4fa3-4cdd-b6f5-e286a8cbe3ed": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                productId: "1596f5ed-42c3-4503-b99b-5bd2e3afc808",
+                text: "Amazing design as well! Highly recommend!",
+                _createdOn: 1723397259012,
+                _id: "a75fa79d-4fa3-4cdd-b6f5-e286a8cbe3ed"
+            },
+            "c03f306e-f685-44cd-84d7-4b41d8f25828": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                productId: "cfb54893-1a3d-49e9-8bf1-91b21eb7e2c8",
+                text: "The stylish armchair is a fantastic addition to my living room. It’s comfortable, well-made, and the design is absolutely stunning. It’s now my favorite spot to relax and unwind after a long day.",
+                _createdOn: 1723397315196,
+                _id: "c03f306e-f685-44cd-84d7-4b41d8f25828"
+            },
+            "f38af88a-00e1-4cad-b02f-bf56e226e2b8": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                productId: "1596f5ed-42c3-4503-b99b-5bd2e3afc808",
+                text: "This stylish chair is a game changer for my home office. It’s incredibly comfortable and the design is sleek and modern. It’s the perfect addition to my workspace, combining comfort with contemporary style.",
+                _createdOn: 1723397372043,
+                _id: "f38af88a-00e1-4cad-b02f-bf56e226e2b8"
             }
-
     	},
     	furniture: {
             "3ae7b411-c1ad-43e2-a60b-c85fafb6b48c": {

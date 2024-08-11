@@ -10,9 +10,12 @@ export default function ProductDetails() {
 
     return (
         <>
-            <section className="relative py-12 bg-gray-100">
+            {/* Product Details Section */}
+            <section className="relative py-12 bg-[#f5f5f5]">
                 <div className="mx-auto max-w-[1440px] px-4 lg:px-12 mt-32">
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                        
+                        {/* Product Images Section */}
                         <div className="lg:col-span-3 flex flex-col lg:flex-row items-center lg:items-start gap-8">
                             <div className="relative w-full lg:w-auto">
                                 <img
@@ -39,34 +42,36 @@ export default function ProductDetails() {
                                 />
                             </div>
                         </div>
-                        <div className="lg:col-span-2 flex flex-col justify-center">
-                            <h2 className="font-bold text-3xl leading-10 text-gray-900 mb-2 capitalize">
+                        
+                        {/* Product Details Section */}
+                        <div className="lg:col-span-2 flex flex-col justify-center bg-white p-8 rounded-lg shadow-lg">
+                            <h2 className="font-bold text-4xl leading-10 text-gray-900 mb-4 capitalize">
                                 {product.title}
                             </h2>
-                            <div className="flex items-center mb-6 pb-8 border-b border-gray-100">
-                                <h6 className="font-semibold text-2xl leading-9 text-gray-900 mr-5">
+                            <div className="flex items-center mb-6 pb-4 border-b border-gray-200">
+                                <h6 className="font-semibold text-3xl leading-9 text-[#76A763] mr-5">
                                     € {product.price}
                                 </h6>
                             </div>
-                            <p className="text-gray-500 text-base font-normal mb-5">
+                            <p className="text-gray-700 text-base font-normal pb-6 border-b border-gray-200">
                                 {product.description}
                             </p>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 py-8">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-8">
                                 <div className="flex items-center justify-center w-full">
-                                    <button className="group py-2 px-4 border border-gray-400 rounded-l-full bg-white transition-all duration-300 hover:bg-gray-50 hover:shadow-sm hover:shadow-gray-300">
+                                    <button className="group py-4 px-4 border border-gray-300 rounded-l-xl bg-white transition-all duration-300 hover:bg-gray-100 hover:shadow-sm">
                                         <FaMinus size={18} />
                                     </button>
                                     <input
                                         type="text"
-                                        className="font-semibold text-gray-900 cursor-pointer text-lg py-[9px] px-4 w-full sm:max-w-[118px] outline-0 border-y border-gray-400 bg-transparent placeholder:text-gray-900 text-center hover:bg-gray-50"
+                                        className="font-semibold text-gray-900 cursor-pointer text-lg py-[11px] px-4 w-full sm:max-w-[118px] outline-0 border-y border-gray-300 bg-transparent placeholder:text-gray-900 text-center hover:bg-gray-50"
                                         placeholder={1}
                                     />
-                                    <button className="group py-2 px-4 border border-gray-400 rounded-r-full bg-white transition-all duration-300 hover:bg-gray-50 hover:shadow-sm hover:shadow-gray-300">
+                                    <button className="group py-4 px-4 border border-gray-300 rounded-r-xl bg-white transition-all duration-300 hover:bg-gray-100 hover:shadow-sm">
                                         <FaPlus size={18} />
                                     </button>
                                 </div>
-                                <button className="group py-3 px-4 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-lg w-full flex items-center justify-center gap-3 transition-all duration-500 hover:bg-indigo-100">
+                                <button className="group py-3 px-6 rounded-xl bg-[#76A763] text-white font-semibold text-lg w-full flex items-center justify-center gap-3 transition-all duration-500 hover:bg-[#93B685]">
                                     <AiOutlineShoppingCart size={20} />
                                     Add to cart
                                 </button>

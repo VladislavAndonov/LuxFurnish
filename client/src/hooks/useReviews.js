@@ -21,7 +21,7 @@ function reviewsReducer(state, action) {
             return action.payload.slice();
 
         case "CREATE_REVIEW":
-            return [action.payload, ...state];
+            return [...state, action.payload];
 
         case "DELETE_REVIEW":
             return state.filter((review) => review._id !== action.payload);
