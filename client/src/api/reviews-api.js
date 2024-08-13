@@ -6,6 +6,8 @@ const create = (productId, text) => requester.post(BASE_URL, { productId, text }
 
 const del = (productId, reviewId) => requester.del(`${BASE_URL}/${reviewId}`, { productId, reviewId });
 
+const edit = (productId, reviewId, text) => requester.put(`${BASE_URL}/${reviewId}`, { productId, text });
+
 const getAll = (productId) => {
 
     const params = new URLSearchParams({
@@ -16,8 +18,10 @@ const getAll = (productId) => {
     return requester.get(`${BASE_URL}?${params.toString()}`);
 };
 
+
 export default {
     del,
     create,
     getAll,
+    edit
 };

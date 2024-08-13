@@ -20,9 +20,14 @@ export function useForm(initialValues, submitCallback) {
         }
     };
 
+    const setFormValues = (newValues) => {
+        setValues(newValues);
+    };
+
     return {
         values,
         changeHandler,
         submitHandler,
+        setFormValues,
     };
 }
