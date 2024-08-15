@@ -29,8 +29,8 @@ export default function Footer() {
                     <div className="sm:ml-8 flex flex-col gap-6">
                         <Link to="/" className="hover:text-[#81837F] text-lg text-[#1A1A1A] cursor-pointer">Home</Link>
                         <Link to="/products" className="hover:text-[#81837F] text-lg  text-[#1A1A1A] cursor-pointer">Products</Link>
-                        <Link to="/about" className="hover:text-[#81837F] text-lg text-[#1A1A1A] cursor-pointer">About</Link>
-                        <Link to="/login" className="hover:text-[#81837F] text-lg text-[#1A1A1A] cursor-pointer">Login</Link>
+                        <Link to="/about" className="hover:text-[#81837F] text-lg text-[#1A1A1A] cursor-pointer">About Us</Link>
+                        <Link to="/register" className="hover:text-[#81837F] text-lg text-[#1A1A1A] cursor-pointer">Get Started</Link>
                     </div>
                     <div className="sm:ml-8 flex flex-col gap-6">
                         <p className="hover:text-[#81837F] text-lg text-[#1A1A1A] cursor-pointer">Legal Policy</p>
@@ -38,7 +38,7 @@ export default function Footer() {
                         <p className="hover:text-[#81837F] text-lg text-[#1A1A1A] cursor-pointer">Privacy Policy</p>
                         <p className="hover:text-[#81837F] text-lg text-[#1A1A1A] cursor-pointer">Terms of Service</p>
                     </div>
-                    <div className="xl:block hidden ml-10 mt-[50px]">
+                    <div className="xl:block hidden self-center xl:ml-10">
                         <label className="text-2xl font-medium leading-5 text-[#1A1A1A]">Explore Latest Trends</label>
                         <div className="flex items-center rounded mt-4">
                             <input type="text" className="text-lg w-full mr-[5px] p-4 leading-4 rounded focus:ring focus:ring-[#76A763] text-[#1A1A1A] placeholder-[#1A1A1A]" placeholder="Enter your email" />

@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-
 import { AuthContextProvider } from './contexts/AuthContext';
 
 import Home from './components/home/Home';
@@ -13,9 +12,9 @@ import Register from './components/register/Register';
 import Footer from './components/footer/Footer';
 import Logout from './components/logout/Logout';
 import PrivateGuard from './components/common/PrivateGuard';
+import PublicGuard from './components/common/PublicGuard';
 
 function App() {
-
     return (
         <AuthContextProvider>
             <Router>
@@ -23,13 +22,16 @@ function App() {
                     <Header />
                     <main className="flex-grow">
                         <Routes>
-                            <Route path="/" element={< Home />} />
+                            <Route path="/" element={<Home />} />
                             <Route path="/products" element={<Products />} />
                             <Route path="/products/:productId" element={<ProductDetails />} />
                             <Route path="/about" element={<AboutUs />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/register" element={<Register />} />
-                            <Route path="/logout" element={<Logout />} />
+
+                            <Route element={<PublicGuard />}>
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/register" element={<Register />} />
+                            </Route>
+
                             <Route element={<PrivateGuard />}>
                                 <Route path="/logout" element={<Logout />} />
                             </Route>
@@ -42,4 +44,4 @@ function App() {
     );
 }
 
-export default App
+export default App;

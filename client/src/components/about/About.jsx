@@ -4,13 +4,15 @@ import { FaCouch, FaLightbulb, FaStar, FaHeadset } from 'react-icons/fa';
 export default function AboutUs() {
     return (
         <>
-            <div className="relative flex flex-col items-center justify-center lg:h-[70vh] h-[35vh] lg:py-12 py-6 bg-cover bg-bottom bg-fixed" style={{ backgroundImage: 'url(/images/hero-images/christopher-burns-BdVQU-NDtA8-unsplash.jpg)' }}>
+            <div className="relative flex flex-col items-center justify-center lg:h-[70vh] h-[35vh] lg:py-12 py-6 bg-cover bg-bottom bg-fixed" style={{ backgroundImage: 'url(/images/hero-images/about-bg.jpg)' }}>
                 <div className="absolute inset-0 bg-white opacity-50"></div>
                 <h1 className="relative font-bold lg:text-7xl text-5xl text-[#1A1A1A] z-10">
-                    About Us
+                    Our Story
                 </h1>
-
-                <div className="relative animate-bounce mt-16 z-10 text-[#1A1A1A]">
+                <p className="relative text-xl lg:text-2xl text-gray-800 mt-4 z-10">
+                    Crafting comfort and elegance for your home, one piece at a time.
+                </p>
+                <div className="relative animate-bounce mt-4 z-10 text-[#1A1A1A]">
                     <FaChevronDown size={30} />
                 </div>
             </div>
@@ -41,35 +43,35 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            <section id="what-we-offer" className="py-12 bg-cover" style={{ backgroundImage: 'url(/images/hero-images/shop-background.jpg)' }}>
+            <section id="what-we-offer" className="py-12 bg-cover bg-[#D7DAD3]">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">What Makes Us Different</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                             <FaCouch size={48} className="text-[#76A763] mb-4 mx-auto" />
                             <h3 className="text-2xl font-semibold mb-4">Quality Furniture</h3>
-                            <p className="text-gray-700">
+                            <p className="text-lg text-gray-600">
                                 Our furniture is crafted with the finest materials and meticulous attention to detail. We ensure that each piece offers both durability and elegance, providing you with furniture that stands the test of time.
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                             <FaLightbulb size={48} className="text-[#76A763] mb-4 mx-auto" />
                             <h3 className="text-2xl font-semibold mb-4">Innovative Design</h3>
-                            <p className="text-gray-700">
+                            <p className="text-lg text-gray-600">
                                 We pride ourselves on our cutting-edge designs that combine modern aesthetics with functional excellence. Our innovative approach ensures that every piece is not only stylish but also practical and comfortable.
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                             <FaStar size={48} className="text-[#76A763] mb-4 mx-auto" />
                             <h3 className="text-2xl font-semibold mb-4">Exclusive Collections</h3>
-                            <p className="text-gray-700">
+                            <p className="text-lg text-gray-600">
                                 Explore our exclusive collections that feature unique designs and limited editions. Our carefully curated selections offer you an opportunity to own exceptional pieces that are truly one-of-a-kind.
                             </p>
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                             <FaHeadset size={48} className="text-[#76A763] mb-4 mx-auto" />
                             <h3 className="text-2xl font-semibold mb-4">Free Consulting</h3>
-                            <p className="text-gray-700">
+                            <p className="text-lg text-gray-600">
                                 Our expert consultants are here to help you choose the perfect pieces for your space. We offer personalized advice and design solutions to ensure that your furniture meets your needs and enhances your home.
                             </p>
                         </div>
@@ -87,7 +89,7 @@ export default function AboutUs() {
                         />
                     </div>
                     <div className="md:w-1/2 md:pl-8">
-                        <h2 className="text-4xl font-bold text-center md:text-left mb-8">Our Commitment to Excellence</h2>
+                        <h2 className="text-4xl font-bold text-center md:text-left mb-8 text-[#76A763]">Our Commitment to Excellence</h2>
                         <p className="text-lg text-gray-700 mb-8">
                             At Lux Furnish, our mission is to elevate the art of living through luxurious, handcrafted furniture. We are dedicated to bringing unparalleled quality, innovation, and style to every home, ensuring that our creations enrich your living environment and provide lasting value.
                         </p>

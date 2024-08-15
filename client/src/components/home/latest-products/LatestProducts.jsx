@@ -10,8 +10,7 @@ import {
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import furnitureAPI from '../../../api/furniture-api';
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { FaStar } from "react-icons/fa";
+import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
 
 export default function LatestProducts() {
     const getVisibleSlides = () => {
@@ -19,6 +18,7 @@ export default function LatestProducts() {
         if (window.innerWidth < 1024) return 2; // Medium screens
         return 3; // Large screens
     };
+
     const [latestProducts, setLatestProducts] = useState([]);
     const [visibleSlides, setVisibleSlides] = useState(getVisibleSlides());
 
@@ -35,7 +35,7 @@ export default function LatestProducts() {
     const fetchLatestProducts = async () => {
         try {
             const result = await furnitureAPI.getAll();
-            setLatestProducts(result.reverse().slice(0, 5));
+            setLatestProducts(result.reverse().slice(0, 6));
         } catch (error) {
             console.error("Error fetching product data:", error);
         }
@@ -52,11 +52,9 @@ export default function LatestProducts() {
                 infinite={true}
                 className="w-full"
             >
-                <div className="relative flex items-center justify-center">
-                    <ButtonBack role="button" aria-label="slide backward" className="absolute text-white z-30 left-4 md:left-10 focus:outline-none cursor-pointer transform -translate-y-1/2">
-                        <svg width={80} height={80} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 18L9 12L15 6" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                <div className="relative flex items-center justify-center group">
+                    <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-4 md:left-10 focus:outline-none cursor-pointer transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <IoIosArrowDropleftCircle size={50} className="text-[#76A763]" />
                     </ButtonBack>
                     <div className="w-full h-full mx-auto overflow-hidden px-4 md:px-8">
                         <Slider>
@@ -78,30 +76,17 @@ export default function LatestProducts() {
                                                 {product.title}
                                             </h6>
                                             <div className="flex items-center justify-between mb-4">
-                                                <h6 className="font-semibold text-xl text-[#76A763]">
+                                                <h6 className="font-semibold text-2xl text-[#76A763]">
                                                     € {product.price}
                                                 </h6>
-                                                <div className="flex items-center">
-                                                    {[...Array(5)].map((_, index) => (
-                                                        <FaStar
-                                                            key={index}
-                                                            className={`text-[#FFC107] ${index < product.rating ? "text-yellow-400" : "text-gray-300"}`}
-                                                            size={16}
-                                                        />
-                                                    ))}
-                                                </div>
                                             </div>
-                                            <p className="text-[#656565] text-md mb-6">
-                                                {product.description.slice(0, 80)}...
+                                            <p className="text-gray-600 text-md mb-6">
+                                                {product.description.slice(0, 70)}...
                                             </p>
                                         </div>
 
-                                        <div className="mt-4 flex justify-between items-center">
-                                            <button className="flex items-center justify-center bg-[#76A763] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#93B685] transition-colors duration-200 ease-in-out">
-                                                <AiOutlineShoppingCart size={20} className="mr-2" />
-                                                Add to Cart
-                                            </button>
-                                            <Link to={`/products/${product._id}`} className="text-[#76A763] hover:text-[#93B685] transition-colors duration-200 ease-in-out">
+                                        <div className="mt-6 flex justify-center items-center">
+                                            <Link to={`/products/${product._id}`} className="flex w-full items-center justify-center bg-[#76A763] text-xl text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#93B685] transition-all duration-500 ease-in-out">
                                                 View Details
                                             </Link>
                                         </div>
@@ -110,10 +95,8 @@ export default function LatestProducts() {
                             ))}
                         </Slider>
                     </div>
-                    <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-4 md:right-10 focus:outline-none cursor-pointer transform -translate-y-1/2">
-                        <svg width={80} height={80} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 18L15 12L9 6" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                    <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-4 md:right-10 focus:outline-none cursor-pointer transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <IoIosArrowDroprightCircle size={50} className="text-[#76A763]" />
                     </ButtonNext>
                 </div>
                 <DotGroup className="flex justify-center mt-4" />

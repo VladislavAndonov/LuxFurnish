@@ -77,7 +77,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className={`fixed top-0 left-0 h-screen w-[60%] border-r border-r-gray-900 bg-[#D7DAD3] ease-in-out duration-300 transform ${activeNav ? 'translate-x-0' : '-translate-x-full'} z-20 lg:hidden`}>
+            <div className={`fixed top-0 left-0 h-screen w-[60%] border-r border-r-gray-900 bg-[#D7DAD3] ease-in-out duration-300 transform ${activeNav ? 'translate-x-0' : '-translate-x-full'} z-50 lg:hidden`}>
                 <div className="text-4xl logo font-semibold p-8">
                     <Link to="/" onClick={closeNav}>LuxFurnish</Link>
                 </div>

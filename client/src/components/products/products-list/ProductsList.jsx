@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { FaStar } from "react-icons/fa";
 
 export default function ProductsList({ products }) {
     return (
@@ -27,32 +25,18 @@ export default function ProductsList({ products }) {
                                     {product.title}
                                 </h6>
                                 <div className="flex items-center justify-between mt-2">
-                                    <h6 className="font-semibold text-xl text-[#76A763]">
+                                    <h6 className="font-semibold text-2xl text-[#76A763]">
                                         € {product.price}
                                     </h6>
-                                    <div className="flex items-center">
-                                        {/* Rating Stars */}
-                                        {[...Array(5)].map((_, index) => (
-                                            <FaStar
-                                                key={index}
-                                                className={`text-[#FFC107] ${index < product.rating ? "text-yellow-400" : "text-gray-300"}`}
-                                                size={16}
-                                            />
-                                        ))}
-                                    </div>
                                 </div>
-                                <p className="text-[#656565] text-md mt-4">
-                                    {product.description.slice(0, 80)}...
+                                <p className="text-lg text-gray-600 text-md mt-4">
+                                    {product.description.slice(0, 70)}...
                                 </p>
                             </div>
 
-                            {/* Add to Cart Button */}
-                            <div className="mt-6 flex justify-between items-center">
-                                <button className="flex items-center justify-center bg-[#76A763] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#93B685] transition-colors duration-200 ease-in-out">
-                                    <AiOutlineShoppingCart size={20} className="mr-2" />
-                                    Add to Cart
-                                </button>
-                                <Link to={`/products/${product._id}`} className="text-[#76A763] hover:text-[#93B685] transition-colors duration-200 ease-in-out">
+                            {/* View Details Button */}
+                            <div className="mt-6 flex justify-center items-center">
+                                <Link to={`/products/${product._id}`} className="flex w-full items-center justify-center bg-[#76A763] text-xl text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#93B685] transition-all duration-500 ease-in-out">
                                     View Details
                                 </Link>
                             </div>

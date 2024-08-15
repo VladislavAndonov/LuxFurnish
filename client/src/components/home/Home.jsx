@@ -37,28 +37,28 @@ export default function Home() {
                         <div className="bg-[#2C2C2C] text-white p-6 rounded-lg shadow-lg text-center">
                             <FaStar size={48} className="text-[#76A763] mb-4 mx-auto" />
                             <h3 className="text-2xl font-semibold mb-4">Premium Quality</h3>
-                            <p className="text-white">
+                            <p className="text-lg text-gray-300">
                                 We ensure each piece is crafted with the finest materials for lasting elegance.
                             </p>
                         </div>
                         <div className="bg-[#2C2C2C] text-white p-6 rounded-lg shadow-lg text-center">
                             <FaShippingFast size={48} className="text-[#76A763] mb-4 mx-auto" />
                             <h3 className="text-2xl font-semibold mb-4">Fast Shipping</h3>
-                            <p className="text-white">
+                            <p className="text-lg text-gray-300">
                                 Experience quick and reliable delivery with our trusted shipping partners.
                             </p>
                         </div>
                         <div className="bg-[#2C2C2C] text-white p-6 rounded-lg shadow-lg text-center">
                             <FaRegHandshake size={48} className="text-[#76A763] mb-4 mx-auto" />
                             <h3 className="text-2xl font-semibold mb-4">Customer Satisfaction</h3>
-                            <p className="text-white">
+                            <p className="text-lg text-gray-300">
                                 Your happiness is our priority. We offer top-notch customer service.
                             </p>
                         </div>
                         <div className="bg-[#2C2C2C] text-white p-6 rounded-lg shadow-lg text-center">
                             <FaHandsHelping size={48} className="text-[#76A763] mb-4 mx-auto" />
                             <h3 className="text-2xl font-semibold mb-4">Sustainability</h3>
-                            <p className="text-white">
+                            <p className="text-lg text-gray-300">
                                 We are committed to sustainable practices for a better future.
                             </p>
                         </div>
@@ -82,7 +82,7 @@ export default function Home() {
                             <p className="text-lg text-black mb-4">
                                 Our living room sets are crafted with attention to detail, ensuring high quality and durability. Experience the perfect blend of luxury and practicality with our exclusive collection.
                             </p>
-                            <button className="mt-4 px-8 py-2 bg-[#76A763] text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-[#93B685] transition-all">
+                            <button className="mt-4 px-8 py-2 bg-[#76A763] text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-[#93B685] transition-all duration-500 ease-in-out">
                                 <Link to="/products" >
                                     Shop Now
                                 </Link>

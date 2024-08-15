@@ -1,25 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Chonburi&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Chonburi&family=Syne:wght@400..800&display=swap');
 
 
 body {
     background-color: black;
+    font-family: "Syne", sans-serif;
 }
 
-/* .home-background {
-    background-image: url('/images/home-bg-hq.jpg');
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    mask-image: linear-gradient(to bottom, black, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent);
-} */
-
 .logo{
-    font-family: "Bodoni Moda SC";
-    /* font-family: "Chonburi"; */
-
+    font-family: "Bodoni Moda SC", serif;
 }
