@@ -1,0 +1,33 @@
+{
+  "name": "luxfurnish_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladislavAndonov/LuxFurnish.git"
+  },
+  "author": "VladislavAndonov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladislavAndonov/LuxFurnish/issues"
+  },
+  "homepage": "https://github.com/VladislavAndonov/LuxFurnish#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.3.2"
+  }
+}
