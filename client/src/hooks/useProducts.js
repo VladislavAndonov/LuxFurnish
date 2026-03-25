@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import furnitureAPI from "../api/furniture-api";
+import { getAllFurniture, getFurnitureById } from "../api/data";
+
 
 export function useGetAllProducts() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const fetchProducts = (async () => {
-            const result = await furnitureAPI.getAll();
+        (async () => {
+            const result = await getAllFurniture();
             setProducts(result);
         })();
     }, []);
@@ -19,7 +20,7 @@ export function useGetOneProduct(productId) {
 
     useEffect(() => {
         (async () => {
-            const result = await furnitureAPI.getOne(productId);
+            const result = await getFurnitureById(productId);
 
             setProduct(result);
         })();

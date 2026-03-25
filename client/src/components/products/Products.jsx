@@ -3,7 +3,7 @@ import { useGetAllProducts } from "../../hooks/useProducts";
 import ProductsList from "./products-list/ProductsList";
 
 export default function Products() {
-    const [products] = useGetAllProducts();
+    const { products } = useGetAllProducts();
 
     return (
         <>
@@ -24,7 +24,7 @@ export default function Products() {
             {/* Products Section */}
             <div className="bg-gray-100 py-12">
                 <div className="container mx-auto px-4">
-                    {products.length > 0 ? (
+                    {products?.length > 0 ? (
                         <ProductsList products={products} />
                     ) : (
                         <div className="flex flex-col items-center justify-center">
