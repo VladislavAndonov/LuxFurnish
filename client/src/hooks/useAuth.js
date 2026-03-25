@@ -1,31 +1,36 @@
-import { useEffect } from "react";
-import { login, register, logout } from "../api/auth-api";
+import { login, register } from "../api/data";
 import { useAuthContext } from "../contexts/AuthContext";
 
 export const useLogin = () => {
     const { changeAuthState } = useAuthContext();
 
-    return async (email, password) => {
+    const loginHandler = async (email, password) => {
         const authData = await login(email, password);
         changeAuthState(authData);
         return authData;
     };
+
+    return loginHandler
 };
 
 export const useRegister = () => {
     const { changeAuthState } = useAuthContext();
 
-    return async (email, password) => {
+    const registerHandler = async (email, password) => {
         const authData = await register(email, password);
         changeAuthState(authData);
         return authData;
     };
+
+    return registerHandler;
 };
 
 export const useLogout = () => {
     const { logout } = useAuthContext();
 
-    useEffect(() => {
+    const logoutHandler = () => {
         logout();
-    }, []);
+    };
+
+    return logoutHandler;
 };

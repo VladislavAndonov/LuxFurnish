@@ -36,6 +36,7 @@ async function requester(method, url, data) {
     return result;
 }
 
+
 export default {
     get: (url) => requester("GET", url),
     post: (url, data) => requester("POST", url, data),

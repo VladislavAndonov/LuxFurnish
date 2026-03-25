@@ -2,11 +2,14 @@ import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 import { useAuthContext } from '../../contexts/AuthContext';
+import { useLogout } from '../../hooks/useAuth';
 
 export default function Header() {
     const { isAuthenticated } = useAuthContext();
     const [activeNav, setActiveNav] = useState(false);
     const [scrolling, setScrolling] = useState(false);
+
+    const logout = useLogout();
 
     const navHandler = () => {
         setActiveNav(!activeNav);
@@ -56,8 +59,10 @@ export default function Header() {
 
                     {isAuthenticated
                         ? (
-                            <div className="hidden lg:flex lg:gap-10 uppercase" id="user" >
-                                <Link to="/logout" className="text-xl hover:underline underline-offset-8 focus:underline-offset-8" onClick={closeNav}>Logout</Link>
+                            <div className="hidden lg:flex lg:gap-10 uppercase" id="user">
+                                <button onClick={logout} className="text-xl hover:underline underline-offset-8 focus:underline-offset-8">
+                                    Logout
+                                </button>
                             </div>
                         )
                         : (
