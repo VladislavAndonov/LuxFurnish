@@ -1,13 +1,13 @@
-import requester from "./requester.js";
+import requester from "./api";
 
 const host = import.meta.env.VITE_API_URL;
 
 export const login = (email, password) => requester.post(`${host}/auth/login`, { email, password });
 export const register = (email, password) => requester.post(`${host}/auth/register`, { email, password });
 
-// FURNITURE
+// PRODUCTS
 
-export async function getAllFurniture(filters = {}) {
+export async function getAllProducts(filters = {}) {
     const params = new URLSearchParams();
     const {
         limit
@@ -20,10 +20,10 @@ export async function getAllFurniture(filters = {}) {
 
     const queryString = params.toString()
 
-    return requester.get(`${host}/furniture${queryString ? '?' + queryString : ''}`);
+    return requester.get(`${host}/products${queryString ? '?' + queryString : ''}`);
 }
 
-export async function getFurnitureById(productId) {
+export async function getProductById(productId) {
     const product = await requester.get(`${host}/${productId}`);
     return product
 }

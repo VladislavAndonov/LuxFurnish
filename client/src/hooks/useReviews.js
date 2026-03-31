@@ -1,68 +1,63 @@
 import { useEffect, useReducer } from "react";
-import reviewsApi from "../api/reviews-api";
+import { addReview, deleteReview, editReview, getAllReviews } from "../api/data";
 
-export function useCreateReview() {
-    return async (productId, review) => {
-        return await reviewsApi.create(productId, review);
-    };
-}
-
-export function useDeleteReview() {
-    return async (productId, reviewId) => {
-        return await reviewsApi.del(productId, reviewId);
-    };
-}
-
-export function useEditReview() {
-    return async (productId, reviewId, text) => {
-        return await reviewsApi.edit(productId, reviewId, text);
-    };
-}
+export const useAddReview = () => addReview;
+export const useDeleteReview = () => deleteReview;
+export const useEditReview = () => editReview;
 
 function reviewsReducer(state, action) {
     switch (action.type) {
-        case "GET_ALL":
+        case "SET":
             return action.payload;
 
-        case "CREATE_REVIEW":
+        case "ADD":
             return [...state, action.payload];
 
-        case "DELETE_REVIEW":
-            return state.filter(review => review._id !== action.payload);
+        case "DELETE":
+            return state.filter(r => r._id !== action.payload);
 
-            case "EDIT_REVIEW":
-                return state.map(existingReview => {
-
-                    if (existingReview._id === action.payload._id) {
-                        return {
-                            ...existingReview,
-                            text: action.payload.text,
-                        };
-                    } else {
-                        return existingReview;
-                    }
-                });            
+        case "UPDATE":
+            return state.map(r =>
+                r._id === action.payload._id
+                    ? { ...r, ...action.payload }
+                    : r
+            );
 
         default:
             return state;
     }
 }
 
-export function useGetAllReviews(productId) {
+export function useReviews(productId) {
     const [reviews, dispatch] = useReducer(reviewsReducer, []);
 
     useEffect(() => {
-        async function fetchReviews() {
+        let isMounted = true;
+
+        (async () => {
             try {
-                const result = await reviewsApi.getAll(productId);
-                dispatch({ type: "GET_ALL", payload: result });
+                const data = await getAllReviews(productId);
+                if (isMounted) {
+                    dispatch({ type: "SET", payload: data });
+                }
             } catch (err) {
                 console.error("Error fetching reviews:", err.message);
             }
-        }
+        })();
 
-        fetchReviews();
+        return () => {
+            isMounted = false;
+        };
     }, [productId]);
 
-    return [reviews, dispatch];
+    const add = (review) => dispatch({ type: "ADD", payload: review });
+    const remove = (reviewId) => dispatch({ type: "DELETE", payload: reviewId });
+    const update = (review) => dispatch({ type: "UPDATE", payload: review });
+
+    return {
+        reviews,
+        add,
+        remove,
+        update,
+    };
 }

@@ -9,8 +9,8 @@ import {
     DotGroup,
 } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import furnitureAPI from '../../../api/furniture-api';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
+import { getAllProducts } from '../../../api/data';
 
 export default function LatestProducts() {
     const getVisibleSlides = () => {
@@ -33,9 +33,10 @@ export default function LatestProducts() {
     }, []);
 
     const fetchLatestProducts = async () => {
+        const maxProductsCount = 6
         try {
-            const result = await furnitureAPI.getAll();
-            setLatestProducts(result.reverse().slice(0, 6));
+            const result = await getAllProducts({limit: maxProductsCount});
+            setLatestProducts(result);
         } catch (error) {
             console.error("Error fetching product data:", error);
         }

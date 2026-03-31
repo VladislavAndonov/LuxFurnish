@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllFurniture, getFurnitureById } from "../api/data";
+import { getAllProducts, getProductById } from "../api/data";
 
 
 export function useGetAllProducts() {
@@ -7,7 +7,7 @@ export function useGetAllProducts() {
 
     useEffect(() => {
         (async () => {
-            const result = await getAllFurniture();
+            const result = await getAllProducts();
             setProducts(result);
         })();
     }, []);
@@ -20,7 +20,7 @@ export function useGetOneProduct(productId) {
 
     useEffect(() => {
         (async () => {
-            const result = await getFurnitureById(productId);
+            const result = await getProductById(productId);
 
             setProduct(result);
         })();
